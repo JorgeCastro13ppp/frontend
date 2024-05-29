@@ -1,16 +1,19 @@
+@import "../../../../../scss/custom";
+
 
 #svgHome {
   width: 20px;
 }
 
-a {
-  font-family: 'Roboto', sans-serif;
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+  font-weight: bold;
 }
 
-a:active{
-  color: #ffffff;
+a span:not(.exception):hover {
+  background-color: $nav-link-background-hover;
+  padding: 5px 10px;
+  border-radius:5px;
 }
-
 
 #sessionSartRegister li{
   justify-self: end;

@@ -1,9 +1,11 @@
 
-<nav class="navbar navbar-expand-lg bg-primary navbar-fixed-top">
+<nav class="navbar navbar-expand-md bg-primary navbar-fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="https://www.flashscore.es/" title="Información">
-      <img src="../../../../assets/bet365-svgrepo-com.svg" alt="Logo" width="37" height="32" class="d-inline-block align-top custom-margin-negative">
-      <span class="me-2">BETS</span>
+      <img src="../../../../assets/bet365-svgrepo-com.svg" alt="Logo" width="37" height="32" class="d-inline-block align-text-top">
+      <span class="me-2 ms-n1 exception">
+        BETS
+      </span>
     </a>
 
     <button class="navbar-toggler m-mt-1" type="button" data-bs-toggle="collapse" data-bs-theme="dark" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,29 +14,93 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown" style="--bs-scroll-height: 200px;">
       <ul class="navbar-nav navbar-nav-scroll">
         <li class="nav-item">
-          <a class="nav-link text-custom-tertiary" href="#" routerLink="/home" routerLinkActive="active">
-            <img src="../../../../assets/home.svg" alt="" id="svgHome" class="align-top"/>
-            Home
+          <a class="nav-link" href="#" routerLink="/home" routerLinkActive="active">
+            <span>
+              <img src="../../../../assets/home-dark.svg" alt="" id="svgHome" class="align-top"/>
+              Home
+            </span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" routerLink="/bets" routerLinkActive="active">Apuestas</a>
+          <a class="nav-link" href="#" routerLink="/bets" routerLinkActive="active">
+            <span>
+              <img src="../../../../assets/sport-dark.svg" alt="" id="svgHome" class="align-top"/>
+              Apuestas
+            </span>
+          </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" routerLink="/games" routerLinkActive="active">Juegos</a>
+        <li class="nav-item dropdown d-none d-md-block">
+          <a class="nav-link dropdown-toggle" href="#" routerLink="/games" routerLinkActive="active" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span>
+              <img src="../../../../assets/games-dark.svg" alt="" id="svgHome" class="align-top"/>
+              Juegos
+            </span>
+          </a>
+          <ul class="dropdown-menu">
+            <li class="nav-item">
+              <a class="nav-link" href="#" routerLink="/games" routerLinkActive="active">
+                <span>
+                  <img src="../../../../assets/roulette-dark.svg" alt="" id="svgHome" class="align-top"/>
+                  Ruleta
+                </span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" routerLink="/games" routerLinkActive="active">
+                <span>
+                  <img src="../../../../assets/poker-dark.svg" alt="" id="svgHome" class="align-top"/>
+                  Póker
+                </span>
+              </a>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+
+          </ul>
         </li>
+        <li class="nav-item d-md-none">
+          <a class="nav-link" href="#" routerLink="/games" routerLinkActive="active">
+            <span>
+              <img src="../../../../assets/roulette-dark.svg" alt="" id="svgHome" class="align-top"/>
+              Ruleta
+            </span>
+          </a>
+        </li>
+        <li class="nav-item d-md-none">
+          <a class="nav-link" href="#" routerLink="/games" routerLinkActive="active">
+            <span>
+              <img src="../../../../assets/poker-dark.svg" alt="" id="svgHome" class="align-top"/>
+              Póker
+            </span>
+          </a>
+        </li>
+
         <li class="nav-item">
-          <a class="nav-link" href="#" routerLink="/profile" routerLinkActive="active">Perfil</a>
+          <a class="nav-link" href="#" routerLink="/profile" routerLinkActive="active">
+            <span>
+              <img src="../../../../assets/profile-dark.svg" alt="" id="svgHome" class="align-top"/>
+              Perfil
+            </span>
+          </a>
         </li>
       </ul>
 
       <ul class="navbar-nav ms-auto">
         <li class="nav-item" #sessionStartRegister>
-           <a class="nav-link" href="#" routerLink="/login" routerLinkActive="active">Iniciar sesión/Registrarse</a>
+           <a class="nav-link" href="#" routerLink="/login" routerLinkActive="active">
+            <span>
+              <img src="../../../../assets/profile-dark.svg" alt="" id="svgHome" class="align-top"/>
+              Iniciar sesión/Registrarse
+            </span>
+          </a>
         </li>
-        <li class="nav-item" #sessionLogout >
-          <a class="nav-link" href="#" routerLink="/login" routerLinkActive="active">Cerrar sesión</a>
-        </li>
+        <!-- <li class="nav-item" #sessionLogout>
+          <a class="nav-link" href="#" routerLink="/login" routerLinkActive="active">
+            <span>
+              <img src="" alt="" id="svgHome" class="align-top"/>
+              Cerrar sesión
+            </span>
+          </a>
+        </li> -->
       </ul>
 
     </div>

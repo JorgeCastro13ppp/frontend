@@ -4,3 +4,9 @@
 @import "../scss/custom";
 @import "../node_modules/bootstrap/scss/bootstrap";
 
+.nav-link{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: normal;
+  color: $nav-link-custom;
+}
+

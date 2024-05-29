@@ -1,0 +1,160 @@
+.container-img {
+  padding: 0;
+  margin: 0;
+  background-image: url('../../../assets/homeBet.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.content {
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 75%;
+}
+
+
+.warning {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  margin-top: 20px;
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+}
+
+@media (max-width: 576px) {
+  p {
+    font-size: 1.5rem; // Tamaño de fuente más pequeño para pantallas pequeñas
+  }
+
+  .warning {
+    font-size: 1.25rem; // Tamaño de fuente más pequeño para pantallas pequeñas
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  p {
+    font-size: 1.75rem; // Tamaño de fuente para pantallas medianas
+  }
+
+  .warning {
+    font-size: 1.5rem; // Tamaño de fuente para pantallas medianas
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  p {
+    font-size: 2rem; // Tamaño de fuente para pantallas grandes
+  }
+
+  .warning {
+    font-size: 1.75rem; // Tamaño de fuente para pantallas grandes
+  }
+}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+  p {
+    font-size: 2.25rem; // Tamaño de fuente para pantallas extra grandes
+  }
+
+  .warning {
+    font-size: 2rem; // Tamaño de fuente para pantallas extra grandes
+  }
+}
+
+@media (min-width: 1201px) {
+  p {
+    font-size: 2.5rem; // Tamaño de fuente para pantallas muy grandes
+  }
+
+  .warning {
+    font-size: 2.25rem; // Tamaño de fuente para pantallas muy grandes
+  }
+}
+
+
+.row-custom{
+  justify-content: center;
+}
+
+container-home-logo {
+  background-color: #B4B4AF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.home-logo-holder {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  perspective: 1000px;
+}
+
+.home-logo {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: home-rotate 10s linear infinite;
+  display: flex;
+  justify-content: center; // Centra horizontalmente
+  align-items: center; // Centra verticalmente
+}
+
+.home-logo .letter {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-size: 100px;
+  font-weight: bold;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-logo .letter:nth-child(1) {
+  transform: rotateY(0deg) translateZ(100px);
+  background-color: #373737;
+}
+
+.home-logo .letter:nth-child(2) {
+  transform: rotateY(90deg) translateZ(100px);
+  background-color: #ffffff;
+}
+
+.home-logo .letter:nth-child(3) {
+  transform: rotateY(180deg) translateZ(100px);
+  background-color: #373737;
+}
+
+.home-logo .letter:nth-child(4) {
+  transform: rotateY(270deg) translateZ(100px);
+  background-color: #ffffff;
+}
+
+@keyframes home-rotate {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+.letter img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

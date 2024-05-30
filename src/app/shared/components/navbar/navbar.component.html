@@ -8,13 +8,13 @@
       </span>
     </a>
 
-    <button class="navbar-toggler m-mt-1" type="button" data-bs-toggle="collapse" data-bs-theme="dark" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon" data-bs-theme="dark"></span>
+    <button class="navbar-toggler m-mt-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown" style="--bs-scroll-height: 200px;">
       <ul class="navbar-nav navbar-nav-scroll">
         <li class="nav-item">
-          <a class="nav-link" href="#" routerLink="/home" routerLinkActive="active">
+          <a class="nav-link" href="#" routerLink="/home-page" routerLinkActive="active">
             <span>
               <img src="../../../../assets/home-dark.svg" alt="" id="svgHome" class="align-top"/>
               Home
@@ -29,16 +29,25 @@
             </span>
           </a>
         </li>
-        <li class="nav-item dropdown d-none d-md-block">
-          <a class="nav-link dropdown-toggle" href="#" routerLink="/games" routerLinkActive="active" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li class="nav-item dropdown m-2 m-md-0">
+          <a class="nav-link dropdown-toggle" href="#" routerLinkActive="active" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <span>
               <img src="../../../../assets/games-dark.svg" alt="" id="svgHome" class="align-top"/>
               Juegos
             </span>
           </a>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu overflow-auto bg-light text-center">
             <li class="nav-item">
-              <a class="nav-link" href="#" routerLink="/games" routerLinkActive="active">
+              <a class="nav-link" href="#" routerLink="/games-page" routerLinkActive="active">
+                <span>
+                  <img src="../../../../assets/guide-dark.svg" alt="" id="svgHome" class="align-top"/>
+                  Guía
+                </span>
+              </a>
+            </li>
+            <li><hr class="dropdown-divider border-black"></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" routerLink="/games/roulette" routerLinkActive="active">
                 <span>
                   <img src="../../../../assets/roulette-dark.svg" alt="" id="svgHome" class="align-top"/>
                   Ruleta
@@ -46,36 +55,35 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" routerLink="/games" routerLinkActive="active">
+              <a class="nav-link" href="#" routerLink="/games/poker" routerLinkActive="active">
                 <span>
                   <img src="../../../../assets/poker-dark.svg" alt="" id="svgHome" class="align-top"/>
                   Póker
                 </span>
               </a>
             </li>
-            <li><hr class="dropdown-divider"></li>
 
+            <li class="nav-item">
+              <a class="nav-link" href="#" routerLink="/games/blackjack" routerLinkActive="active">
+                <span>
+                  <img src="../../../../assets/blackjack-dark.svg" alt="" id="svgHome" class="align-top"/>
+                  Blackjack
+                </span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" routerLink="/games/slots" routerLinkActive="active">
+                <span>
+                  <img src="../../../../assets/slot-dark.svg" alt="" id="svgHome" class="align-top"/>
+                  Slots
+                </span>
+              </a>
+            </li>
           </ul>
-        </li>
-        <li class="nav-item d-md-none">
-          <a class="nav-link" href="#" routerLink="/games" routerLinkActive="active">
-            <span>
-              <img src="../../../../assets/roulette-dark.svg" alt="" id="svgHome" class="align-top"/>
-              Ruleta
-            </span>
-          </a>
-        </li>
-        <li class="nav-item d-md-none">
-          <a class="nav-link" href="#" routerLink="/games" routerLinkActive="active">
-            <span>
-              <img src="../../../../assets/poker-dark.svg" alt="" id="svgHome" class="align-top"/>
-              Póker
-            </span>
-          </a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="#" routerLink="/profile" routerLinkActive="active">
+          <a class="nav-link" href="#" routerLink="/profile-page" routerLinkActive="active">
             <span>
               <img src="../../../../assets/profile-dark.svg" alt="" id="svgHome" class="align-top"/>
               Perfil

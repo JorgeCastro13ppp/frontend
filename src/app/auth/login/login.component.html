@@ -1,1 +1,28 @@
-<p>login works!</p>
+<div class="container-login">
+  <div class="wrapper">
+    <form action="#">
+      <h2>Login</h2>
+        <div class="input-field">
+        <input type="text" required>
+        <label>Enter your email</label>
+      </div>
+      <div class="input-field">
+        <input type="password" required>
+        <label>Enter your password</label>
+      </div>
+      <div class="forget">
+        <label for="remember">
+          <input type="checkbox" id="remember">
+          <span>Remember me</span>
+        </label>
+
+        <a href="#">Forgot password?</a>
+      </div>
+      <button type="submit">Log In</button>
+      <div class="register">
+        <p>Don't have an account? <a href="#" routerLink="/register" routerLinkActive="active">Register</a></p>
+      </div>
+    </form>
+  </div>
+</div>
+

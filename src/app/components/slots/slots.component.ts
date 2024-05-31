@@ -12,4 +12,5 @@ export class SlotsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
 }

@@ -1,1 +1,71 @@
-/*# sourceMappingURL=games.component.css.map */
+.carousel-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  top: 25px;
+}
+
+.carousel-track {
+  display: flex;
+  animation: scroll 20s linear infinite;
+}
+
+.card {
+  flex: 0 0 60%;
+  margin-right: 20px;
+  width: 65%;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+
+.container-text {
+  margin-top: 100px;
+}
+
+.container-text .row #textInfo {
+  font-size: large;
+  font-family: "Great Vibes", cursive;
+}
+
+.list-group {
+  padding-left: 3rem;
+  padding-right: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.list-group a[target=_blank] {
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  color: black;
+  transition: color 0.2s ease;
+}
+
+.list-group a[target=_blank]:hover {
+  font-weight: bold;
+}
+
+svg {
+  width: 5%;
+}
+
+.container-alert {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-top: 5rem;
+}
+
+.alert {
+  border-radius: 0;
+  border: 1px solid;
+}/*# sourceMappingURL=games.component.css.map */

@@ -1,0 +1,55 @@
+<h1 class="display-1 text-center">Ruleta europea</h1>
+<div class="container container-table">
+  <div class="row">
+    <div class="col-12">
+      <table>
+        <tr>
+          <td class="bg-primary" id="zero" rowspan="4" (click)="selectNumber(0)">
+            0
+          </td>
+        </tr>
+        <tr id="firstRow">
+          <td *ngFor="let num of numbers.slice(1, 13)" (click)="selectNumber(num)" [ngClass]="{'red': (num - 1) % 2 === 0, 'black': (num - 1) % 2 !== 0}">{{ num }}</td>
+        </tr>
+        <tr id="secondRow">
+          <td *ngFor="let num of numbers.slice(13, 25)" (click)="selectNumber(num)" [ngClass]="{'red': (num - 1) % 2 === 0, 'black': (num - 1) % 2 !== 0}">{{ num }}</td>
+        </tr>
+        <tr id="thirdRow">
+          <td *ngFor="let num of numbers.slice(25,37)" (click)="selectNumber(num)" [ngClass]="{'red': (num - 1) % 2 === 0, 'black': (num - 1) % 2 !== 0}">{{ num }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="container container-input">
+
+  <div class="row" id="rowInputsTitle">
+    <div class="col-4">
+      <h4 class="display-4 text-center">Número</h4>
+    </div>
+    <div class="col-4">
+      <h4 class="display-4 text-center">Dinero</h4>
+    </div>
+  </div>
+
+  <div class="row" id="rowInputs">
+    <div class="col-3">
+      <input id="numberBet" type="number" [(ngModel)]="selectedNumberControl">
+    </div>
+    <div class="col-3">
+      <input id="moneyBet" type="number" [(ngModel)]="selectedMoneyControl" step="0.01">
+    </div>
+  </div>
+</div>
+
+<div class="container container-buttons">
+  <div class="row">
+    <div class="btn-group">
+      <button *ngFor="let button of buttons" [ngClass]="button.class" (click)="button.action()">
+        {{ button.label }}
+      </button>
+    </div>
+  </div>
+</div>
+

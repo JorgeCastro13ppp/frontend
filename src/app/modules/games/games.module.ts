@@ -6,6 +6,7 @@ import { RouletteComponent } from 'src/app/components/roulette/roulette.componen
 import { SlotsComponent } from 'src/app/components/slots/slots.component';
 import { PokerComponent } from 'src/app/components/poker/poker.component';
 import { BlackjackComponent } from 'src/app/components/blackjack/blackjack.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,9 @@ import { BlackjackComponent } from 'src/app/components/blackjack/blackjack.compo
   ],
   imports: [
     CommonModule,
-    GamesRoutingModule
+    GamesRoutingModule,
+    FormsModule,
+
   ],
   exports: [
     RouletteComponent,

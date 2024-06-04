@@ -1,21 +1,21 @@
 <div class="container-register">
   <div class="wrapper">
-    <form action="#">
+    <form action="#" [formGroup]="registerForm">
       <h2>Registro</h2>
       <div class="input-field">
-        <input type="name" required>
+        <input type="name" formControlName="name" required>
         <label>Introduce tu nombre completo</label>
       </div>
         <div class="input-field">
-        <input type="email" required>
+        <input type="email" formControlName="email" required>
         <label>Introduce tu email</label>
       </div>
       <div class="input-field">
-        <input type="password" required>
+        <input type="password" formControlName="password" required>
         <label>Introduce tu contraseña</label>
       </div>
       <div class="input-field">
-        <input type="password" required>
+        <input type="password" formControlName="confirmPassword" required>
         <label>Introduce confirmación de tu contraseña</label>
       </div>
       <button type="submit">Registro</button>

@@ -1,3 +1,5 @@
+@import "../../../../scss/custom";
+
 .container-table{
   margin-top: 50px;
 }
@@ -24,12 +26,17 @@ table, tr, td {
   margin-top: 2rem;
 }
 
-.red {
+.green-table{
+  background-color: $primary;
+  font-weight: bold;
+}
+
+.red-table {
   background-color: red;
   font-weight: bold;
 }
 
-.black {
+.black-table {
   background-color: black;
   color: white;
   font-weight: bold;
@@ -50,3 +57,64 @@ justify-content: space-evenly;
 h1{
   margin-top: 75px;
 }
+
+#numberBet.red {
+  background-color: red;
+  color: black;
+}
+
+#numberBet.black {
+  background-color: black;
+  color: white;
+}
+
+#numberBet.green {
+  background-color: $primary;
+  color: black;
+}
+
+#moneyBet.active {
+  background-color: $primary;
+  color: $info;
+}
+
+input {
+  font-size:small;
+}
+
+// Breakpoint sm (576px)
+@media (min-width: 575px) {
+  input {
+    font-size:medium;
+  }
+}
+
+// Breakpoint md (768px)
+@media (min-width: 767px) {
+  input {
+    font-size: large;
+  }
+}
+
+// Breakpoint lg (992px)
+@media (min-width: 991px) {
+  input {
+    font-size:larger;
+  }
+}
+
+// Breakpoint xl (1200px)
+@media (min-width: 1199px) {
+  input {
+    font-size:x-large;
+  }
+}
+
+// Breakpoint xxl (1400px)
+@media (min-width: 1399px) {
+  input {
+    font-size: xx-larger;
+  }
+}
+
+

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MustMatch } from './_helpers';
+// import { MustMatch } from './_helpers';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
       acceptTerms: [false, Validators.requiredTrue]
 
     },{
-      validators: MustMatch('password','confirmPassword')
+      // validators: MustMatch('password','confirmPassword')
     });
   }
 

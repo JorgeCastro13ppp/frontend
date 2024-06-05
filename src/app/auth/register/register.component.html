@@ -1,29 +1,108 @@
 <div class="container-register">
   <div class="wrapper">
-    <form action="#" [formGroup]="registerForm">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
       <h2>Registro</h2>
       <div class="input-field">
         <input type="name" formControlName="name" required>
         <label>Introduce tu nombre completo</label>
       </div>
+      <div *ngIf="registerForm.get('name')?.invalid && (registerForm.get('name')?.dirty || registerForm.get('name')?.touched)">
+        <small class="text-danger" *ngIf="registerForm.get('name')?.errors?.['required']">El nombre es requerido</small>
+        <small class="text-danger" *ngIf="registerForm.get('name')?.errors?.['minlength']">El nombre debe tener al menos 8 caracteres</small>
+      </div>
         <div class="input-field">
-        <input type="email" formControlName="email" required>
+        <input type="text" formControlName="email" required>
         <label>Introduce tu email</label>
+      </div>
+      <div *ngIf="registerForm.get('email')?.invalid && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched)">
+        <small class="text-danger" *ngIf="registerForm.get('email')?.errors?.['required']">El email es requerido</small>
+        <small class="text-danger" *ngIf="registerForm.get('email')?.errors?.['email']">El email no es válido</small>
       </div>
       <div class="input-field">
         <input type="password" formControlName="password" required>
         <label>Introduce tu contraseña</label>
       </div>
+      <div *ngIf="registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)">
+        <small class="text-danger" *ngIf="registerForm.get('password')?.errors?.['required']">La contraseña es requerida</small>
+        <small class="text-danger" *ngIf="registerForm.get('password')?.errors?.['minlength']">La contraseña debe tener al menos 6 caracteres</small><br/>
+        <small class="text-danger" *ngIf="registerForm.get('password')?.errors?.['pattern']">La contraseña debe tener 1 número,1 mayúscula,1 minúscula,1 carácter especial</small>
+        <small class="text-danger" *ngIf="registerForm.hasError('noSonIguales')">Las contraseñas no coinciden</small>
+      </div>
       <div class="input-field">
         <input type="password" formControlName="confirmPassword" required>
         <label>Introduce confirmación de tu contraseña</label>
       </div>
-      <button type="submit">Registro</button>
+      <div *ngIf="registerForm.get('confirmPassword')?.invalid && (registerForm.get('confirmPassword')?.dirty || registerForm.get('confirmPassword')?.touched)">
+        <small class="text-danger" *ngIf="registerForm.hasError('required')">La confirmación de contraseña es requerida</small>
+        <small class="text-danger" *ngIf="registerForm.hasError('unMatch')">Las contraseñas no coinciden</small>
+      </div>
+      <div class="forget">
+        <label for="remember">
+          <input type="checkbox" id="remember" formControlName="termsAccepted">
+          <span>Aceptar términos y condiciones</span>
+        </label>
+        <div *ngIf="registerForm.get('confirmPassword')?.invalid && (registerForm.get('confirmPassword')?.dirty || registerForm.get('confirmPassword')?.touched)">
+          <small class="text-danger" *ngIf="registerForm.get('termsAccepted')?.errors?.['required']">Aceptar los términos y condiciones es requerido</small>
+        </div>
+      </div>
+      <button type="submit" [disabled]="!registerForm.valid" [ngClass]="{'button-register': registerForm.valid}">Registro</button>
       <div class="login">
         <p>¿Ya tienes una cuenta? <a href="#" routerLink="/login" routerLinkActive="active">Iniciar sesión</a></p>
+        <a class="false-a" data-bs-toggle="modal" data-bs-target="#termsModal">Consulta los términos y condiciones</a>
       </div>
     </form>
   </div>
 </div>
+<!-- {{registerForm.valid}} -->
 
+<!-- Modal -->
+ <div class="modal fade" id="termsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Términos y condiciones</h1>
+      </div>
+      <div class="modal-body">
+        <ul class="list-group-numbered">
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">Edad mínima:</div>Debes tener al menos 18 años de edad para jugar en nuestro sitio web. El acceso y el uso de nuestros servicios por parte de menores de 18 años están estrictamente prohibidos.
+            </div>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">Juego responsable:</div>El juego debe ser una actividad recreativa y divertida. Si sientes que estás perdiendo el control sobre tu juego o que estás desarrollando problemas de ludopatía, te recomendamos que busques ayuda profesional.
+            </div>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">Ludopatía:</div>La ludopatía es un trastorno serio que puede afectar negativamente tu vida y la de quienes te rodean. Si crees que puedes tener un problema con el juego, te instamos a que busques ayuda y apoyo de organizaciones especializadas.
+            </div>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">Información personal:</div> Al registrarte en nuestro sitio web, debes proporcionar información personal precisa y veraz. Nos comprometemos a proteger tu privacidad y a utilizar tus datos personales de acuerdo con nuestra política de privacidad.
+            </div>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">Cumplimiento legal:</div>
+            Cumplimos con todas las leyes y regulaciones aplicables relacionadas con el juego en línea y la protección de menores. Nos reservamos el derecho de suspender o cancelar cuentas que no cumplan con nuestros términos y condiciones.
+            </div>
+          </li>
+        </ul>
+        <div class="ms-4 me-auto">
+          <p class="fw-semibold fs-4">
+            Al aceptar estos términos y condiciones, confirmas que tienes al menos <strong class="text-danger text-underline">18 años de edad</strong> y que comprendes y aceptas nuestras políticas de juego responsable. Si tienes alguna pregunta o inquietud, no dudes en ponerte en contacto con nuestro equipo de atención al cliente.
+          </p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal" (click)="unMarkCheckbox()">No he entendido</button>
+        <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal" (click)="markCheckbox()">Entendido</button>
+      </div>
+    </div>
+  </div>
+</div>
 
+<!-- {{registerForm.value|json}} -->

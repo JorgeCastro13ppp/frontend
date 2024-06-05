@@ -10,7 +10,7 @@
 }
 .container-register::before {
   content: "";
-  position: absolute;
+  position:absolute;
   width: 100%;
   height: 100%;
   background: url("../../../assets/homeBet.jpg");
@@ -18,6 +18,7 @@
   background-size: cover;
 }
 .wrapper {
+  margin-top: 4.43rem;
   width: 400px;
   border-radius: 8px;
   padding: 30px;
@@ -91,19 +92,25 @@ span {
 .wrapper a:hover {
   text-decoration: underline;
 }
+
 button {
-  background: #fff;
-  color: #000;
+  background: #c0c0c0;
+  color: #212121;
   font-weight: 600;
   border: none;
   padding: 12px 20px;
-  cursor: pointer;
   border-radius: 3px;
   font-size: 16px;
   border: 2px solid transparent;
+}
+
+.button-register {
+  background: #fff;
+  color: #000;
+  cursor: pointer;
   transition: 0.3s ease;
 }
-button:hover {
+.button-register:hover {
   color: #fff;
   border-color: #fff;
   background: rgba(255, 255, 255, 0.15);
@@ -112,4 +119,43 @@ button:hover {
   text-align: center;
   margin-top: 30px;
   color: #fff;
+}
+
+/* register.component.scss */
+.input-field {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.invalid-feedback {
+  color: red;
+  font-size: 0.875em;
+  margin-top: 0.25rem;
+}
+
+.is-invalid {
+  border-color: red;
+}
+
+.false-a{
+  text-decoration: underline; /* Subrayado para simular un enlace */
+  cursor: pointer;
+}
+
+.modal-dialog{
+  top: 7.5rem;
+  max-height: 50%;
+  min-height: 400px;
+}
+
+.modal-body::-webkit-scrollbar {
+  width: 0.75rem; /* Ancho del scrollbar */
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  background-color: #c0c0c0; /* Color del thumb del scrollbar */
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Cambia el color del thumb del scrollbar cuando se pasa el mouse sobre él */
 }

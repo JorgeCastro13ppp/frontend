@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-// import { MustMatch } from './_helpers';
+import { FormControl,FormGroup,Validators } from '@angular/forms';
+
+ import { MustMatch } from '../../shared/ui/mustMatch.validator';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -8,41 +9,32 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
 
-  registerForm!:FormGroup;
-  submitted = false;
+  registerForm: FormGroup = new FormGroup({
+    name: new FormControl('',[Validators.required, Validators.minLength(8)]),
+    email: new FormControl('',[Validators.required, Validators.email]),
+    password: new FormControl('',[Validators.required, Validators.minLength(6),
+      Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^A-Za-z0-9]).{6,}$')]),
+    confirmPassword: new FormControl('',[Validators.required]),
+    termsAccepted: new FormControl(false,[Validators.requiredTrue])
+  },
+     { validators: MustMatch}
+  );
 
-  constructor(private formBuilder:FormBuilder) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.registerForm = this.formBuilder.group({
-      name: ['', Validators.required],
-      email: ['',Validators.email],
-      password: ['',[Validators.required, Validators.minLength(8)]],
-      confirmPassword: ['',Validators.required],
-      acceptTerms: [false, Validators.requiredTrue]
-
-    },{
-      // validators: MustMatch('password','confirmPassword')
-    });
-  }
-
-  get f(){
-    return this.registerForm.controls;
   }
 
   onSubmit() {
-    this.submitted=true;
-
-    if(this.registerForm.invalid){
-      return
-    }
-    alert('Éxito \n\n'+JSON.stringify(this.registerForm.value,null,4));
+    console.log(this.registerForm.value);
   }
 
-  onReset(){
-    this.submitted = false;
-    this.registerForm.reset();
+  markCheckbox() {
+    this.registerForm.get('termsAccepted')?.setValue(true);
   }
 
+  unMarkCheckbox(){
+    this.registerForm.get('termsAccepted')?.setValue(false);
+  }
 
 }

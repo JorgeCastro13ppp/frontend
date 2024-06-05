@@ -1,5 +1,4 @@
 .container-profile {
-  height: 100vh;
   backdrop-filter: blur(20px);
   display: flex;
   justify-content: center;
@@ -23,6 +22,7 @@
   .main-profile {
     display: flex;
     align-items: center;
+    margin-top: 6rem;
   }
   .profile-image {
     width: 15%;
@@ -41,7 +41,6 @@
 /* ------- profile body header */
   .profile-body {
     display: grid;
-    grid-template-columns: 150px auto;
     gap: 70px;
     padding: 70px;
     margin-top: 2.5rem;

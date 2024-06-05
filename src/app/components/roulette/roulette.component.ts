@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-roulette',
@@ -6,6 +7,8 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
   styleUrls: ['./roulette.component.scss']
 })
 export class RouletteComponent implements OnInit {
+
+  constructor(private router:Router){}
 
   ngOnInit(): void {
   }
@@ -47,7 +50,7 @@ export class RouletteComponent implements OnInit {
   }
 
   exit() {
-    throw new Error('Method not implemented.');
+    this.router.navigate(['/games-page']);
   }
   repeat() {
     throw new Error('Method not implemented.');

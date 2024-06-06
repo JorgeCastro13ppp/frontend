@@ -7,6 +7,9 @@ import { BetsComponent } from '../../components/bets/bets.component';
 import { RegisterComponent } from '../../auth/register/register.component';
 import { LoginComponent } from '../../auth/login/login.component';
 import { ProfileComponent } from 'src/app/pages/profile/profile.component';
+import { PaymentDepositComponent } from 'src/app/pages/payment-deposit/payment-deposit.component';
+import { PaymentWithdrawalsComponent } from 'src/app/pages/payment-withdrawals/payment-withdrawals.component';
+import { HelpComponent } from 'src/app/pages/help/help.component';
 
 
 const routes: Routes = [
@@ -17,6 +20,9 @@ const routes: Routes = [
   {path:'profile-page',component: ProfileComponent},
   {path:'bets',component: BetsComponent},
   {path:'games-page',component: GamesComponent},
+  {path:'deposit-page',component: PaymentDepositComponent},
+  {path:'withdrawals-page',component: PaymentWithdrawalsComponent},
+  {path:'help-page',component: HelpComponent},
   {path:'games',loadChildren: ()=>import('../../modules/games/games.module').then(g=>g.GamesModule), data: {parent:true}},
   {path:'**',component: ErrorComponent}
 ];

@@ -16,6 +16,9 @@ import { ErrorComponent } from './pages/error/error.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { PaymentDepositComponent } from './pages/payment-deposit/payment-deposit.component';
+import { PaymentWithdrawalsComponent } from './pages/payment-withdrawals/payment-withdrawals.component';
+import { HelpComponent } from './pages/help/help.component';
 
 
 
@@ -30,7 +33,10 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     HomeComponent,
     ErrorComponent,
-    ProfileComponent
+    ProfileComponent,
+    PaymentDepositComponent,
+    PaymentWithdrawalsComponent,
+    HelpComponent
   ],
   imports: [
     BrowserModule,

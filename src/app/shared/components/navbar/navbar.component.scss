@@ -16,9 +16,9 @@
   font-weight: bold;
 }
 
-a span:not(.exception):hover {
+.nav-item:hover {
   background-color: $nav-link-background-hover;
-  padding: 5px 10px;
+  // padding: 5px 10px;
   border-radius:5px;
 }
 

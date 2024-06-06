@@ -16,7 +16,6 @@
   position:absolute;
   width: 100%;
   height: 100%;
-  // background: url("../../../assets/homeBet.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -28,7 +27,7 @@
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  margin-bottom: 1rem;
 }
 form {
   display: flex;
@@ -141,7 +140,7 @@ button {
 }
 
 .false-a{
-  text-decoration: underline; /* Subrayado para simular un enlace */
+  text-decoration: underline;
   cursor: pointer;
 }
 

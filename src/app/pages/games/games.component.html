@@ -17,7 +17,7 @@
 <div class="carousel-container">
   <div class="carousel-track">
     <div class="card text-bg-primary" *ngFor="let card of cards.concat(cards)">
-      <img src="" class="card-img" alt=""/>
+      <img [src]="card.image" class="card-img" alt=""/>
       <div class="card-body">
         <h5 class="card-title">{{ card.title }}</h5>
         <p class="card-text">{{ card.text }}</p>

@@ -1,13 +1,13 @@
 <div class="container-login">
   <div class="wrapper">
-    <form action="#">
+    <form action="#" (submit)="onSubmit()">
       <h2>Iniciar sesión</h2>
         <div class="input-field">
-        <input type="text" required>
+        <input type="text" [(ngModel)]="email" name="email" required>
         <label>Introduce tu email</label>
         </div>
       <div class="input-field">
-        <input type="password" required>
+        <input type="password" [(ngModel)]="password" name="password" required>
         <label>Introduce tu contraseña</label>
       </div>
       <div class="forget">
@@ -26,4 +26,4 @@
   </div>
 </div>
 
-{{user|json}}
+

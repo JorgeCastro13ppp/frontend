@@ -18,4 +18,8 @@ export class AuthService {
   register(userData: any): Observable<any> {
     return this.httpClient.post(`${this.apiUrl}/register`, userData);
   }
+  login(email: string, password: string): Observable<any> {
+    // Enviar la solicitud de inicio de sesión al backend
+    return this.httpClient.post<any>(`${this.apiUrl}/login`, { email, password });
+  }
 }

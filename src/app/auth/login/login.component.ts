@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/shared/interfaces/user.interface';
 import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
@@ -9,21 +8,27 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  user?:User;
+  email: string = '';
+  password: string = '';
+
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
-    // Suponiendo que tienes el userId del usuario
-    this.authService.getUser().subscribe(
-      (data: User) => {
-        this.user = data;
+
+  }
+
+  onSubmit():void{
+    // Llamar al servicio de autenticación para iniciar sesión
+    this.authService.login(this.email, this.password).subscribe(
+      (user) => {
+        console.log('Usuario autenticado:', user);
+        // Aquí puedes redirigir al usuario a otra página o hacer otras acciones después de iniciar sesión correctamente
       },
-      error => {
-        console.error('Error al obtener datos del usuario:', error);
+      (error) => {
+        console.error('Error al iniciar sesión:', error);
+        // Aquí puedes mostrar un mensaje de error al usuario
       }
     );
-
-    console.log(this.user);
   }
 }
 

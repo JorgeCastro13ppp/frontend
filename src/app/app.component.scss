@@ -1,0 +1,9 @@
+.blur-effect {
+  filter: blur(4px); /* Ajusta el valor según desees */
+  transition: filter 0.75s ease; /* Agrega una transición suave */
+}
+
+.no-blut-effect{
+  filter: blur(0px);
+  transition: filter 0.75s ease;
+}

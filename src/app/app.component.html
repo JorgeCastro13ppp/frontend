@@ -1,2 +1,5 @@
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
+<app-navbar [toggleMethod]="toggleNavbar" ></app-navbar>
+<div id="container-components" class="container-components" (click)="closeNavbar()" >
+  <router-outlet></router-outlet>
+</div>
+

@@ -20,6 +20,7 @@ import { PaymentDepositComponent } from './pages/payment-deposit/payment-deposit
 import { PaymentWithdrawalsComponent } from './pages/payment-withdrawals/payment-withdrawals.component';
 import { HelpComponent } from './pages/help/help.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
 
 
 
@@ -38,7 +39,8 @@ import { ContactComponent } from './pages/contact/contact.component';
     PaymentDepositComponent,
     PaymentWithdrawalsComponent,
     HelpComponent,
-    ContactComponent
+    ContactComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

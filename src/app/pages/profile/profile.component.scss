@@ -150,7 +150,9 @@ img {
 
 .img-fluid-custom{
   width: 100%;
-  max-height: 11rem;
+  min-height: 10rem;
+  height: 11rem;
+  max-height: 12rem;
   object-fit: cover;
 }
 
@@ -159,6 +161,9 @@ img {
   content: url('../../../assets/upload.svg');
   background-color: white ; /* Hace que la imagen sea más blanca al pasar el cursor */
   animation: fadeIn 1s ease forwards;
+  min-height: 10rem;
+  height: 11rem;
+  max-height: 12rem;
 }
 
 .fw-custom-number{
@@ -172,7 +177,7 @@ img {
 #customToast{
   position: absolute;
   top: 8rem;
-  left: 33%;
+  left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1000;
   animation: fadeIn 1s ease forwards; /* Animación de fade in */

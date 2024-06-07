@@ -1,32 +1,34 @@
+@import '../../../../scss/custom.scss';
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300&display=swap');
-body{
+.container-payment{
   height: 100vh;
   overflow: hidden;
   background: #0f0c29;
-  background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
-  background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+  background: -webkit-linear-gradient(to right, rgb(36, 36, 36), rgb(122, 122, 122));
+  background: linear-gradient(to right, rgb(36, 36, 36), rgb(122, 122, 122));
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: "Poppins";
 }
-.modal {
+.modal-payment {
   background: #FFFFFF;
   box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
   max-width: 450px;
+  margin-top: 4rem;
 }
-.form {
+.form-payment {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 20px;
+  gap: 1rem;
+  padding: 1.25rem;
 }
 .paymentother {
   display: grid;
   grid-template-columns: 50% 50%;
-  gap: 20px;
-  padding: 10px;
+  gap: 1rem;
+  padding: 0.75rem;
   justify-content: center;
 }
 .paymentother button {
@@ -43,54 +45,54 @@ body{
 .paymentother button:last-child svg {
   height: 22px;
 }
-.separator {
+.separator-payment {
   width: calc(100% - 20px);
   display: grid;
   grid-template-columns: 2fr 1fr 2fr;
-  gap: 10px;
+  gap: 1rem;
   color: #8B8E98;
   margin: 0 10px;
 }
-.separator p {
+.separator-payment p {
   display: block;
   text-align: center;
   font-weight: 600;
   font-size: 12px;
   margin: auto;
 }
-.separator .line {
+.separator-payment .line-payment {
   display: inline-block;
   width: 100%;
-  height: 1px;
+  height: 2px;
   border: 0;
   background-color: #e8e8e8;
 }
-.card-info{
+.card-info-payment{
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 0.9rem;
 }
-.input_container {
+.input-container {
   width: 100%;
   height: fit-content;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 0.3rem;
 }
-.split {
+.split-payment {
   display: grid;
   grid-template-columns: 4fr 2fr;
-  gap: 15px;
+  gap: 0.9rem;
 }
-.split input {
+.split-payment input {
   width: 100%;
 }
-.input_label {
+.input-label {
   font-size: 12px;
   color: #8B8E98;
   font-weight: 600;
 }
-.input_field {
+.input-field {
   width: auto;
   height: 40px;
   padding: 0 0 0 16px;
@@ -100,18 +102,18 @@ body{
   border: 1px solid #e5e5e500;
   transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
 }
-.input_field:focus {
+.input-field:focus {
   border: 1px solid transparent;
   box-shadow: 0px 0px 0px 2px #242424;
   background-color: transparent;
 }
 /* Reset input number styles */
-.input_field::-webkit-outer-spin-button,
-.input_field::-webkit-inner-spin-button {
+.input-field::-webkit-outer-spin-button,
+.input-field::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-.checkout {
+.checkout-payment {
   position: relative;
   font-family: inherit;
   font-weight: 500;
@@ -119,26 +121,26 @@ body{
   letter-spacing: 0.05em;
   border-radius: 0.8em;
   border: none;
-  background: #302b63;
+  background: $primary;
   color: ghostwhite;
   overflow: hidden;
 }
-.checkout span {
+.checkout-payment span {
   position: relative;
   transition: color 0.6s;
   display: inline-flex;
   align-items: center;
   padding: 0.8em 1.2em 0.8em 1.05em;
 }
-.checkout::before,
-.checkout::after {
+.checkout-payment::before,
+.checkout-payment::after {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
-.checkout::before {
+.checkout-payment::before {
   content: "";
   background: #000;
   width: 120%;
@@ -146,9 +148,17 @@ body{
   transform: skew(30deg);
   transition: transform 0.5s cubic-bezier(0.3, 1, 0.8, 1);
 }
-.checkout:hover::before {
+.checkout-payment:hover::before {
   transform: translate3d(100%, 0, 0);
 }
-.checkout:active {
+.checkout-payment:active {
   transform: scale(0.95);
+}
+
+#expiryDate{
+  width: 15rem;
+}
+
+#cvv{
+  width: 8rem;
 }

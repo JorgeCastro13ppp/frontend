@@ -6,7 +6,7 @@
   background: -webkit-linear-gradient(to right, rgb(36, 36, 36), rgb(122, 122, 122));
 
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: linear-gradient(to right, rgba(36, 36, 36,1), rgba(122, 122, 122,1))
+  background: linear-gradient(to right, rgb(36, 36, 36), rgb(122, 122, 122))
   }
 
 .py-custom{
@@ -16,6 +16,53 @@
 
 .p-custom-info{
   padding: 2rem;
+}
+
+.number-custom-size{
+  font-size: 1.25rem;
+
+  @media (min-width: 576px) {
+    font-size: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 1.75rem;
+  }
+
+  @media (min-width: 992px) {
+    font-size: 2rem;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 2.25rem;
+  }
+
+  @media (min-width: 1400px) {
+    font-size: 2.5rem;
+  }
+}
+.action-custom-size{
+  font-size: 1.25rem;
+
+  @media (min-width: 576px) {
+    font-size: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 1.75rem;
+  }
+
+  @media (min-width: 992px) {
+    font-size: 2rem;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 2.25rem;
+  }
+
+  @media (min-width: 1400px) {
+    font-size: 2.5rem;
+  }
 }
 
 .p-custom-size {
@@ -83,8 +130,76 @@ img {
   z-index: 1;
   border: 5px solid white;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .h-custom{
   height: 12rem;
+}
+
+#exit {
+  color: red;
+  &:hover {
+    color: rgb(199, 0, 0); // color más apagado para el hover
+  }
+}
+
+#fileInput{
+  display: none;
+}
+
+.img-fluid-custom{
+  width: 100%;
+  max-height: 11rem;
+  object-fit: cover;
+}
+
+.img-svg:hover {
+  filter: brightness(1.25);
+  content: url('../../../assets/upload.svg');
+  background-color: white ; /* Hace que la imagen sea más blanca al pasar el cursor */
+  animation: fadeIn 1s ease forwards;
+}
+
+.fw-custom-number{
+  font-weight: 700;
+}
+
+.fw-custom-p{
+  font-weight: 500;
+}
+
+#customToast{
+  position: absolute;
+  top: 8rem;
+  left: 33%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  animation: fadeIn 1s ease forwards; /* Animación de fade in */
+}
+
+#customToast.fade-out{
+  animation: fadeOut 1s ease forwards;
+}
+
+.toast-body{
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Comienza completamente transparente */
+  }
+  to {
+    opacity: 1; /* Termina completamente visible */
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1; /* Comienza completamente visible */
+  }
+  to {
+    opacity: 0; /* Termina completamente transparente */
+  }
 }

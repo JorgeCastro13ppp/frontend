@@ -4,9 +4,17 @@
       <div class="col col-lg-9 col-xl-8">
         <div class="card">
           <div class="h-custom rounded-top text-white d-flex flex-row bg-primary">
-            <div class="w-custom-img ms-4 mt-5 d-flex flex-column">
-              <img src="../../../assets/profile-page-image.png"
-                alt="Generic placeholder image" class="img-fluid"/>
+            <div class="w-custom-img ms-4 mt-5 d-flex flex-column container-svg">
+              <img
+              [src]="profileImage"
+              alt="Generic placeholder image"
+              class="img-fluid-custom img-svg"
+              (mouseover)="showToast()"
+              (mouseout)="hideToast()"
+              (click)="fileInput.click()"/>
+              <!-- Elemento de entrada de archivo oculto -->
+              <input type="file" id="fileInput" #fileInput (change)="onFileSelected($event)"/>
+
             </div>
             <div class="mt-name ms-3">
               <h2>Nombre de usuario</h2>
@@ -15,15 +23,15 @@
           <div class="p-custom-info text-black bg-body-secondary">
             <div class="d-flex justify-content-end text-center py-1 text-body">
               <div>
-                <p class="mb-1 p-custom-size">1020.00 €</p>
+                <p class="mb-1 number-custom-size fw-custom-number">1020.00 €</p>
                 <p class="p-custom-size text-muted mb-0">Balance</p>
               </div>
               <div class="px-3">
-                <p class="mb-1 p-custom-size">1000.00 €</p>
+                <p class="mb-1 number-custom-size fw-custom-number">1000.00 €</p>
                 <p class="p-custom-size text-muted mb-0">Bono</p>
               </div>
               <div>
-                <p class="mb-1 p-custom-size">20.00 €</p>
+                <p class="mb-1 number-custom-size fw-custom-number">20.00 €</p>
                 <p class="p-custom-size text-muted mb-0">A retirar</p>
               </div>
             </div>
@@ -32,19 +40,19 @@
             <div class="mb-5 text-body">
               <h5 class="h5-custom-size lead fw-normal mb-1">Cuenta</h5>
               <div class="p-4 bg-body-secondary">
-                <p class="p-custom-size font-italic mb-1"><a class="text-decoration-none" [routerLink]="['/deposit-page']">Ingresar</a></p>
-                <p class="p-custom-size font-italic mb-1"><a class="text-decoration-none" [routerLink]="['/withdrawals-page']">Retirar</a></p>
-                <p class="p-custom-size font-italic mb-0"><a class="text-decoration-none" >Historial</a></p>
+                <p class="fw-custom-p action-custom-size font-italic mb-1"><a class="text-decoration-none" [routerLink]="['/deposit-page']">Ingresar</a></p>
+                <p class="fw-custom-p action-custom-size font-italic mb-1"><a class="text-decoration-none" [routerLink]="['/withdrawals-page']">Retirar</a></p>
+                <p class="fw-custom-p action-custom-size font-italic mb-0"><a class="text-decoration-none" >Historial</a></p>
               </div>
             </div>
-            <div class="d-flex justify-content-between align-items-center mb-4 text-body">
-
+            <div class="row g-2">
+              <h5 class="h5-custom-size"><a class="text-decoration-none" [routerLink]="['/contact-page']" >Contacto</a></h5>
             </div>
             <div class="row g-2">
               <h5 class="h5-custom-size"><a class="text-decoration-none" [routerLink]="['/help-page']">Ayuda</a></h5>
             </div>
             <div class="row g-2">
-              <h5 class="h5-custom-size"><a class="text-decoration-none">Salir</a></h5>
+              <h5 class="h5-custom-size"><a id="exit" class="text-decoration-none">Salir</a></h5>
             </div>
           </div>
         </div>
@@ -52,3 +60,12 @@
     </div>
   </div>
 </section>
+
+<!-- Toast de Bootstrap -->
+<div id="customToast" class="toast align-items-center text-black bg-info border-0 d-none" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="d-flex">
+    <div class="toast-body">
+      Pincha para cambiar la imagen de perfil
+    </div>
+  </div>
+</div>

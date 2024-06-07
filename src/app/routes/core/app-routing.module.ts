@@ -10,6 +10,7 @@ import { ProfileComponent } from 'src/app/pages/profile/profile.component';
 import { PaymentDepositComponent } from 'src/app/pages/payment-deposit/payment-deposit.component';
 import { PaymentWithdrawalsComponent } from 'src/app/pages/payment-withdrawals/payment-withdrawals.component';
 import { HelpComponent } from 'src/app/pages/help/help.component';
+import { ContactComponent } from 'src/app/pages/contact/contact.component';
 
 
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path:'deposit-page',component: PaymentDepositComponent},
   {path:'withdrawals-page',component: PaymentWithdrawalsComponent},
   {path:'help-page',component: HelpComponent},
+  {path:'contact-page',component:ContactComponent},
   {path:'games',loadChildren: ()=>import('../../modules/games/games.module').then(g=>g.GamesModule), data: {parent:true}},
   {path:'**',component: ErrorComponent}
 ];

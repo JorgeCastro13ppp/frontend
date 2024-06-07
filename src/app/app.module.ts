@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PaymentDepositComponent } from './pages/payment-deposit/payment-deposit.component';
 import { PaymentWithdrawalsComponent } from './pages/payment-withdrawals/payment-withdrawals.component';
 import { HelpComponent } from './pages/help/help.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 
 
@@ -36,7 +37,8 @@ import { HelpComponent } from './pages/help/help.component';
     ProfileComponent,
     PaymentDepositComponent,
     PaymentWithdrawalsComponent,
-    HelpComponent
+    HelpComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

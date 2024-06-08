@@ -1,9 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 // @import "~bootstrap/dist/css/bootstrap.min.css";
 // @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-@import "../scss/custom";
+@import "../scss/custom.scss";
 @import "../node_modules/bootstrap/scss/bootstrap";
 @import "../node_modules/aos/dist/aos.css";
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.scss";
 
 .nav-link{
   font-family: 'Montserrat', sans-serif;
@@ -13,6 +14,7 @@
 
 body::-webkit-scrollbar {
   width: 1rem; /* Ancho del scrollbar */
+  background-color: $primary;
 }
 
 body::-webkit-scrollbar-thumb {

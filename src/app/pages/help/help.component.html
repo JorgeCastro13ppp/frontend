@@ -1,1 +1,353 @@
-<p>help works!</p>
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="position-sticky pt-3">
+        <h5 class="sidebar-heading">Preguntas Frecuentes</h5>
+        <ul class="nav flex-column">
+          <ul class="nav flex-column">
+
+
+            <li class="nav-item">
+              <a class="nav-link" (click)="scrollToQuestion('q7')">¿Hay límites de depósito?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" (click)="scrollToQuestion('q8')">¿Qué es una apuesta combinada?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" (click)="scrollToQuestion('q9')">¿Cómo funcionan las apuestas en vivo?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" (click)="scrollToQuestion('q20')">¿Cómo funcionan las promociones y bonos?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" (click)="scrollToQuestion('q10')">¿Qué es un bono de bienvenida?</a>
+            </li>
+            <!-- Agrega más preguntas aquí si es necesario -->
+          </ul>
+          <li class="nav-item">
+            <a class="nav-link" (click)="scrollToQuestion('q16')">¿Qué hago si encuentro un problema técnico?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="scrollToQuestion('q18')">¿Cómo puedo autolimitarme en las apuestas?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="scrollToQuestion('q19')">¿Qué hago si creo que tengo un problema con el juego?</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" (click)="scrollToQuestion('q11')">¿Cómo puedo cancelar una apuesta?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="scrollToQuestion('q12')">¿Puedo apostar desde mi móvil?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="scrollToQuestion('q13')">¿Cómo verifico mi cuenta?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="scrollToQuestion('q14')">¿Qué son las cuotas y cómo funcionan?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="scrollToQuestion('q1')">¿Cómo crear una cuenta?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="scrollToQuestion('q2')">¿Cómo hacer una apuesta?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="scrollToQuestion('q3')">¿Cómo puedo retirar mis ganancias?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="scrollToQuestion('q15')">¿Cómo puedo consultar el historial de mis apuestas?</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" (click)="scrollToQuestion('q4')">¿Qué métodos de pago están disponibles?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="scrollToQuestion('q5')">¿Cómo puedo contactar con el servicio de atención al cliente?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="scrollToQuestion('q6')">¿Qué hago si olvido mi contraseña?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="scrollToQuestion('q17')">¿Puedo cancelar una solicitud de retiro?</a>
+          </li>
+
+          <!-- Agrega más preguntas aquí si es necesario -->
+
+
+        </ul>
+      </div>
+    </nav>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <h1 class="h2">Preguntas Frecuentes</h1>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item" id="q1">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+               ¿Cómo crear una cuenta?
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>Puedes crear una cuenta haciendo clic en el botón de registro en la página de inicio y siguiendo las instrucciones.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item" id="q2">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                ¿Cómo hacer una apuesta?
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>Para hacer una apuesta, selecciona el evento en el que deseas apostar, elige tu tipo de apuesta y la cantidad que deseas apostar.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Añadir más preguntas aquí de la misma manera -->
+
+          <div class="accordion-item" id="q3">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                ¿Cómo puedo retirar mis ganancias?
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>Puedes retirar tus ganancias desde tu cuenta, seleccionando la opción de retiro y eligiendo el método de pago preferido.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item" id="q4">
+            <h2 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                ¿Qué métodos de pago están disponibles?
+              </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>Ofrecemos varios métodos de pago, incluidos tarjetas de crédito/débito, transferencias bancarias y monederos electrónicos.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item" id="q5">
+            <h2 class="accordion-header" id="headingFive">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                ¿Cómo puedo contactar con el servicio de atención al cliente?
+              </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>Puedes contactar con nuestro servicio de atención al cliente a través del chat en vivo, correo electrónico o teléfono.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item" id="q6">
+            <h2 class="accordion-header" id="headingSix">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                ¿Qué hago si olvido mi contraseña?
+              </button>
+            </h2>
+            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>Puedes restablecer tu contraseña haciendo clic en "¿Olvidaste tu contraseña?" en la página de inicio de sesión y siguiendo las instrucciones.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item" id="q7">
+            <h2 class="accordion-header" id="headingSeven">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                ¿Hay límites de depósito?
+              </button>
+            </h2>
+            <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>Sí, puedes establecer límites de depósito diarios, semanales o mensuales desde la configuración de tu cuenta.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item" id="q8">
+            <h2 class="accordion-header" id="headingEight">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                ¿Qué es una apuesta combinada?
+              </button>
+            </h2>
+            <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>Una apuesta combinada es cuando apuestas en varios eventos a la vez y todos deben ganar para que tu apuesta sea exitosa.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item" id="q9">
+            <h2 class="accordion-header" id="headingNine">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                ¿Cómo funcionan las apuestas en vivo?
+              </button>
+            </h2>
+            <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>Las apuestas en vivo te permiten apostar en eventos que ya están en curso, con cuotas que cambian en tiempo real.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item" id="q10">
+            <h2 class="accordion-header" id="headingTen">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                ¿Qué es un bono de bienvenida?
+              </button>
+            </h2>
+            <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>Un bono de bienvenida es una oferta promocional que se otorga a nuevos usuarios al registrarse y realizar su primer depósito.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item" id="q11">
+            <h2 class="accordion-header" id="headingEleven">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+                ¿Cómo puedo cancelar una apuesta?
+              </button>
+            </h2>
+            <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>Una vez realizada una apuesta, no puede ser cancelada. Asegúrate de revisar todos los detalles antes de confirmar tu apuesta.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item" id="q12">
+            <h2 class="accordion-header" id="headingTwelve">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+                ¿Puedo apostar desde mi móvil?
+              </button>
+            </h2>
+            <div id="collapseTwelve" class="accordion-collapse collapse" aria-labelledby="headingTwelve" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>Sí, nuestra plataforma está optimizada para dispositivos móviles, permitiéndote apostar desde tu smartphone o tablet.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item" id="q13">
+            <h2 class="accordion-header" id="headingThirteen">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen">
+                ¿Cómo verifico mi cuenta?
+              </button>
+            </h2>
+            <div id="collapseThirteen" class="accordion-collapse collapse" aria-labelledby="headingThirteen" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>Puedes verificar tu cuenta proporcionando los documentos solicitados, como una identificación válida y un comprobante de domicilio.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item" id="q14">
+            <h2 class="accordion-header" id="headingFourteen">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFourteen" aria-expanded="false" aria-controls="collapseFourteen">
+                ¿Qué son las cuotas y cómo funcionan?
+              </button>
+            </h2>
+            <div id="collapseFourteen" class="accordion-collapse collapse" aria-labelledby="headingFourteen" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>Las cuotas determinan el pago potencial de una apuesta. Cuanto más altas sean las cuotas, mayor será el riesgo y la recompensa.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item" id="q15">
+            <h2 class="accordion-header" id="headingFifteen">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFifteen" aria-expanded="false" aria-controls="collapseFifteen">
+                ¿Cómo puedo consultar el historial de mis apuestas?
+              </button>
+            </h2>
+            <div id="collapseFifteen" class="accordion-collapse collapse" aria-labelledby="headingFifteen" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>Puedes consultar el historial de tus apuestas desde tu cuenta, en la sección de "Historial de Apuestas".</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item" id="q16">
+            <h2 class="accordion-header" id="headingSixteen">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSixteen" aria-expanded="false" aria-controls="collapseSixteen">
+                ¿Qué hago si encuentro un problema técnico?
+              </button>
+            </h2>
+            <div id="collapseSixteen" class="accordion-collapse collapse" aria-labelledby="headingSixteen" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>Si encuentras un problema técnico, contacta con nuestro servicio de atención al cliente para asistencia inmediata.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item" id="q17">
+            <h2 class="accordion-header" id="headingSeventeen">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeventeen" aria-expanded="false" aria-controls="collapseSeventeen">
+                ¿Puedo cancelar una solicitud de retiro?
+              </button>
+            </h2>
+            <div id="collapseSeventeen" class="accordion-collapse collapse" aria-labelledby="headingSeventeen" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>Puedes cancelar una solicitud de retiro si aún no ha sido procesada, desde la sección de "Retiros" en tu cuenta.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item" id="q18">
+            <h2 class="accordion-header" id="headingEighteen">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEighteen" aria-expanded="false" aria-controls="collapseEighteen">
+                ¿Cómo puedo autolimitarme en las apuestas?
+              </button>
+            </h2>
+            <div id="collapseEighteen" class="accordion-collapse collapse" aria-labelledby="headingEighteen" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>Puedes establecer límites de apuestas y autoexclusión temporal desde la configuración de tu cuenta para autolimitarte.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item" id="q19">
+            <h2 class="accordion-header" id="headingNineteen">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNineteen" aria-expanded="false" aria-controls="collapseNineteen">
+                ¿Qué hago si creo que tengo un problema con el juego?
+              </button>
+            </h2>
+            <div id="collapseNineteen" class="accordion-collapse collapse" aria-labelledby="headingNineteen" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>Si crees que tienes un problema con el juego, contacta con nuestro servicio de atención al cliente para obtener ayuda y considera buscar apoyo profesional.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item" id="q20">
+            <h2 class="accordion-header" id="headingTwenty">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwenty" aria-expanded="false" aria-controls="collapseTwenty">
+                ¿Cómo funcionan las promociones y bonos?
+              </button>
+            </h2>
+            <div id="collapseTwenty" class="accordion-collapse collapse" aria-labelledby="headingTwenty" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>Las promociones y bonos se ofrecen periódicamente a nuestros usuarios. Asegúrate de leer los términos y condiciones antes de participar.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+</div>
+

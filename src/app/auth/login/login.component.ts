@@ -17,16 +17,25 @@ export class LoginComponent implements OnInit {
 
   }
 
-  onSubmit():void{
+  onSubmit(): void {
     // Llamar al servicio de autenticación para iniciar sesión
     this.authService.login(this.email, this.password).subscribe(
       (user) => {
         console.log('Usuario autenticado:', user);
-        // Aquí puedes redirigir al usuario a otra página o hacer otras acciones después de iniciar sesión correctamente
+        // Guardar la información del usuario en sessionStorage
+        const usuario = {
+          email: this.email,
+          password: this.password
+        };
+        sessionStorage.setItem('currentUser', JSON.stringify(usuario));
+        this.authService.setSessionTimeout();
+        // Mostrar alerta de inicio de sesión exitoso
+        alert('¡Te has logueado!');
       },
       (error) => {
         console.error('Error al iniciar sesión:', error);
-        // Aquí puedes mostrar un mensaje de error al usuario
+        // Mostrar alerta de error de inicio de sesión
+        alert('Contraseña o usuario incorrecto');
       }
     );
   }

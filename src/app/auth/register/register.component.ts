@@ -3,6 +3,7 @@ import { FormControl,FormGroup,Validators } from '@angular/forms';
 
  import { MustMatch } from '../../shared/ui/mustMatch.validator';
 import { AuthService } from 'src/app/shared/services/auth.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -21,7 +22,7 @@ export class RegisterComponent implements OnInit {
      { validators: MustMatch}
   );
 
-  constructor(private authService:AuthService) { }
+  constructor(private authService:AuthService, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -38,7 +39,12 @@ export class RegisterComponent implements OnInit {
       };
       this.authService.register(registerData).subscribe(
         response => {
+          alert('Te has registrado, serás redirigido al login');
           console.log('Usuario registrado con éxito', response);
+          this.registerForm.reset();
+          setTimeout(() => {
+            this.router.navigate(['/login']);
+          }, 2000);
         },
         error => {
           console.error('Error en el registro', error);

@@ -124,12 +124,22 @@ width: 100%;
 padding: 14px 28px;
 background: #ffff;
 border: 1px solid #fff;
-color: #fff;
+
+  &:focus {
+    outline: none;
+    border: 1px solid #000;
+    border-radius: 0;
+
+    + button {
+        border-left: 1px solid #000;
+    }
+  }
 }
 .subscribe-form input:focus {
-  outline: none; /* Elimina el borde de enfoque predeterminado */
-  border: 1px solid #000; /* Ajusta el grosor y el color del borde en estado de enfoque */
-  border-radius: 0; /* Hace que el borde sea cuadrado */
+  outline: none;
+  border: 1px solid #000;
+  border-radius: 0;
+
 }
 .subscribe-form button {
   position: absolute;
@@ -156,6 +166,4 @@ color: #000;
 .copyright-text p a{
 color: #ff5e14;
 }
-
-
 

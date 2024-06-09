@@ -41,7 +41,7 @@
           <input type="checkbox" id="remember" formControlName="termsAccepted">
           <span>Aceptar términos y condiciones</span>
         </label>
-        <div *ngIf="registerForm.get('confirmPassword')?.invalid && (registerForm.get('confirmPassword')?.dirty || registerForm.get('confirmPassword')?.touched)">
+        <div *ngIf="registerForm.get('termsAccepted')?.invalid && (registerForm.get('confirmPassword')?.dirty || registerForm.get('confirmPassword')?.touched)">
           <small class="text-danger" *ngIf="registerForm.get('termsAccepted')?.errors?.['required']">Aceptar los términos y condiciones es requerido</small>
         </div>
       </div>

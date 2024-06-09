@@ -1,66 +1,78 @@
 <section class="contact-page-section">
   <div class="container">
-      <div class="sec-title">
-          <div class="title">Contacta con nosotros</div>
-            <h2>Mantengámonos en contacto.</h2>
-        </div>
-        <div class="inner-container">
-          <div class="row clearfix">
-
-              <!--Form Column-->
-                <div class="form-column col-md-8 col-sm-12 col-xs-12">
-                  <div class="inner-column">
-                        <!--Contact Form-->
-                        <div class="contact-form">
-                            <form method="post" action="sendemail.php" id="contact-form">
-                                <div class="row clearfix">
-                                    <div class="form-group col-md-6 col-sm-6 co-xs-12">
-                                        <input type="text" name="name" value="" placeholder="Name" required>
-                                    </div>
-                                    <div class="form-group col-md-6 col-sm-6 co-xs-12">
-                                        <input type="email" name="email" value="" placeholder="Email" required>
-                                    </div>
-                                    <div class="form-group col-md-6 col-sm-6 co-xs-12">
-                                        <input type="text" name="subject" value="" placeholder="Subject" required>
-                                    </div>
-                                    <div class="form-group col-md-6 col-sm-6 co-xs-12">
-                                        <input type="text" name="phone" value="" placeholder="Phone" required>
-                                    </div>
-                                    <div class="form-group col-md-12 col-sm-12 co-xs-12">
-                                        <textarea name="message" placeholder="Massage"></textarea>
-                                    </div>
-                                    <div class="form-group col-md-12 col-sm-12 co-xs-12">
-                                        <button type="submit" class="theme-btn btn-style-one">Send Now</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <!--End Contact Form-->
-
-                    </div>
-                </div>
-
-                <!--Info Column-->
-                <div class="info-column col-md-4 col-sm-12 col-xs-12">
-                  <div class="inner-column">
-                      <h2>Información de contacto</h2>
-                        <ul class="list-info">
-                          <li><i class="bi bi-globe2"></i>C. Antonio M' Concha, 10300 Navalmoral de la Mata, Cáceres</li>
-                            <li><i class="bi bi-envelope"></i>bets@gmail.com<br/>jlcastroc01@educarex.es</li>
-                            <li><i class="bi bi-phone"></i>+34 685 66 28 37 <br> +34 658 33 68 47</li>
-                        </ul>
-                        <ul class="social-icon-four">
-                            <li class="follow">Síguenos en: </li>
-                            <li><a href="#"><i class="bi bi-facebook"></i></a></li>
-                            <li><a href="#"><i class="bi bi-twitter-x"></i></a></li>
-                            <li><a href="#"><i class="bi bi-google"></i></a></li>
-                            <li><a href="#"><i class="bi bi-dribbble"></i></a></li>
-                            <li><a href="#"><i class="bi bi-pinterest"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+    <div class="sec-title">
+      <div class="title">Contacta con nosotros</div>
+      <h2>Mantengámonos en contacto.</h2>
     </div>
+    <div class="inner-container">
+      <div class="row clearfix">
+        <div class="form-column col-md-8 col-sm-12 col-xs-12">
+          <div class="inner-column">
+            <div class="contact-form">
+              <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                <div class="row clearfix">
+                  <div class="form-group col-md-6 col-sm-6 co-xs-12" [ngClass]="{'has-error': contactForm.get('to_name')?.invalid && contactForm.get('name')?.touched}">
+                    <input type="text" formControlName="to_name" placeholder="Nombre">
+                    <div *ngIf="contactForm.get('to_name')?.invalid && contactForm.get('to_name')?.touched">
+                      <small class="text-danger" *ngIf="contactForm.get('to_name')?.errors?.['required']">El nombre es requerido.</small>
+                      <small class="text-danger" *ngIf="contactForm.get('to_name')?.errors?.['minlength']">El nombre debe tener al menos 5 caracteres.</small>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-6 col-sm-6 co-xs-12" [ngClass]="{'has-error': contactForm.get('email')?.invalid && contactForm.get('email')?.touched}">
+                    <input type="email" formControlName="from_email" placeholder="Correo electrónico">
+                    <div *ngIf="contactForm.get('from_email')?.invalid && contactForm.get('from_email')?.touched">
+                      <small class="text-danger" *ngIf="contactForm.get('from_email')?.errors?.['required']">El email es requerido.</small>
+                      <small class="text-danger" *ngIf="contactForm.get('from_email')?.errors?.['email']">El email no es válido.</small>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-6 col-sm-6 co-xs-12" [ngClass]="{'has-error': contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched}">
+                    <input type="text" formControlName="subject" placeholder="Subject">
+                    <div *ngIf="contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched">
+                      <small class="text-danger" *ngIf="contactForm.get('subject')?.errors?.['required']">El asunto es requerido.</small>
+                      <small class="text-danger" *ngIf="contactForm.get('subject')?.errors?.['minlength']">El asunto debe tener al menos 6 caracteres.</small>
+                    </div>
+                  </div>
+                   <div class="form-group col-md-6 col-sm-6 co-xs-12" [ngClass]="{'has-error': contactForm.get('phone')?.invalid && contactForm.get('phone')?.touched}">
+                    <input type="text" formControlName="phone" placeholder="Teléfono">
+                    <div *ngIf="contactForm.get('phone')?.invalid && contactForm.get('phone')?.touched">
+                      <small class="text-danger" *ngIf="contactForm.get('phone')?.errors?.['required']">El teléfono es requerido.</small>
+                      <small class="text-danger" *ngIf="contactForm.get('phone')?.errors?.['pattern']">El teléfono debe contener solo números.</small>
+                      <small class="text-danger" *ngIf="contactForm.get('phone')?.errors?.['minlength']">El teléfono debe tener al menos 9 caracteres.</small>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-12 col-sm-12 co-xs-12">
+                    <textarea formControlName="message" placeholder="Mensaje"></textarea>
+                    <div *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
+                      <small class="text-danger" *ngIf="contactForm.get('message')?.errors?.['required']">El mensaje es requerido.</small>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-12 col-sm-12 co-xs-12">
+                    <button type="submit" class="theme-btn-disabled btn-style-one" [disabled]="contactForm.invalid" [ngClass]="{'theme-btn': contactForm.valid}">Enviar</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="info-column col-md-4 col-sm-12 col-xs-12">
+          <div class="inner-column">
+            <h2>Información de contacto</h2>
+            <ul class="list-info">
+              <li><i class="bi bi-globe2"></i>C. Antonio M' Concha, 10300 Navalmoral de la Mata, Cáceres</li>
+              <li><i class="bi bi-envelope"></i>bets@gmail.com<br />jlcastroc01@educarex.es</li>
+              <li><i class="bi bi-phone"></i>+34 685 66 28 37 <br> +34 658 33 68 47</li>
+            </ul>
+            <ul class="social-icon-four">
+              <li class="follow">Síguenos en: </li>
+              <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+              <li><a href="#"><i class="bi bi-twitter-x"></i></a></li>
+              <li><a href="#"><i class="bi bi-google"></i></a></li>
+              <li><a href="#"><i class="bi bi-dribbble"></i></a></li>
+              <li><a href="#"><i class="bi bi-pinterest"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

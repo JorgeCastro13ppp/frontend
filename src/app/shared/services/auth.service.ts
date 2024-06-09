@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../interfaces/user.interface';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private httpClient:HttpClient) { }
+  constructor(private httpClient:HttpClient,private router:Router) { }
   private apiUrl = 'https://back-end-production-71ca.up.railway.app/api';
 
   getUser() {
@@ -21,5 +22,18 @@ export class AuthService {
   login(email: string, password: string): Observable<any> {
     // Enviar la solicitud de inicio de sesión al backend
     return this.httpClient.post<any>(`${this.apiUrl}/login`, { email, password });
+  }
+
+  logout() {
+    // Eliminar la información del usuario del sessionStorage
+    sessionStorage.removeItem('currentUser');
+  }
+
+  setSessionTimeout() {
+    setTimeout(() => {
+      this.logout();
+       this.router.navigate(['/home']);
+       alert('Se ha finalizado sesión, ha pasado 1 hora');
+    }, 3600000); // 3600000 milisegundos = 1 hora
   }
 }

@@ -88,6 +88,7 @@ ul {
   color: #000;
   line-height: 1.8em;
   padding-left: 45px;
+  word-break: break-word;
 }
 .contact-page-section .info-column .list-info li:last-child {
   margin-bottom: 0;
@@ -133,24 +134,25 @@ ul {
   resize: none;
 }
 .contact-form .theme-btn {
-  font-size: 16px;
-  font-weight: 700;
-  margin-top: 10px;
-  text-transform: capitalize;
-  padding: 16px 39px;
-  border: 2px solid $primary;
-  font-family: Arimo, sans-serif;
-  background: $primary;
-  display: inline-block;
-  position: relative;
-  line-height: 24px;
-  cursor: pointer;
-  color: #000;
+  opacity:1 !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  margin-top: 10px !important;
+  text-transform: capitalize !important;
+  padding: 16px 39px !important;
+  border: 2px solid $primary !important;
+  font-family: Arimo, sans-serif !important;
+  background: $primary !important;
+  display: inline-block !important;
+  position: relative !important;
+  line-height: 24px !important;
+  cursor: pointer !important;
+  color: #000 !important;
 }
 .contact-form .theme-btn:hover {
-  color: $primary;
-  border-color: $primary;
-  background: 0 0;
+  color: $primary !important;
+  border-color: $primary !important;
+  background: 0 0 !important;
 }
 .contact-form input.error,
 .contact-form select.error,
@@ -195,3 +197,47 @@ ul {
 .social-icon-four li a:hover {
   color: #fff;
 }
+
+.info-column .list-info li {
+  display: flex;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+button{
+  cursor: not-allowed !important;
+}
+
+.contact-form .theme-btn-disabled {
+  opacity: 0.6;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 10px;
+  text-transform: capitalize;
+  padding: 16px 39px;
+  border: 2px solid $primary;
+  font-family: Arimo, sans-serif;
+  background: $primary;
+  display: inline-block;
+  position: relative;
+  line-height: 24px;
+  cursor: not-allowed;
+  color: #000;
+}
+.contact-form .theme-btn-disabled:hover {
+  opacity: 0.6;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 10px;
+  text-transform: capitalize;
+  padding: 16px 39px;
+  border: 2px solid $primary;
+  font-family: Arimo, sans-serif;
+  background: $primary;
+  display: inline-block;
+  position: relative;
+  line-height: 24px;
+  cursor: not-allowed;
+  color: #000;
+}
+

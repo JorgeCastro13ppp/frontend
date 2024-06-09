@@ -8,6 +8,8 @@ export class AppComponent {
 
   title = 'frontend';
 
+  isLoggedIn: boolean = false;
+
   toggleNavbar() {
     const containerComponent = document.querySelector('.container-components');
     if (containerComponent) {
@@ -23,4 +25,5 @@ export class AppComponent {
       containerComponent.classList.remove('blur-effect');
     }
   }
+
 }

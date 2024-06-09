@@ -7,7 +7,7 @@
                       <i class="fas fa-map-marker-alt"></i>
                       <div class="cta-text">
                           <h4>Encuéntranos</h4>
-                          <span>1010 Avenue, sw 54321, chandigarh</span>
+                          <span>C. Antonio M' Concha, 10300 Navalmoral de la Mata, Cáceres</span>
                       </div>
                   </div>
               </div>
@@ -39,9 +39,8 @@
                           <a href="https://iesaugustobriga.educarex.es/"><img src="../../../../assets/augustobriga.png" class="img-fluid" alt="logo"></a>
                       </div>
                       <div class="footer-text">
-                          <p>Proyecto de fin de grado del Ciclo de Grado Superior Daw. Desarollado,documentado y presentado en su totalidad por Jorge Leonardo Castro. </p>
+                          <p>Proyecto de fin de grado del Ciclo de Grado Superior Daw. Desarollado,documentado y presentado en su totalidad por Jorge Leonardo Castro.</p>
                       </div>
-
                   </div>
               </div>
               <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 mb-50">
@@ -53,10 +52,13 @@
                           <p>No dejes de suscribirte a nuestros nuevos feeds, por favor completa el formulario a continuación.</p>
                       </div>
                       <div class="subscribe-form">
-                          <form action="#">
-                              <input type="text" placeholder="Dirección email">
-                              <button><i class="bi bi-envelope-at-fill"></i></button>
-                          </form>
+                        <form [formGroup]="subscribeForm" (ngSubmit)="onSubmit()" method="POST">
+                          <input id="email" type="text" formControlName="to_email" placeholder="Dirección email">
+                          <button type="submit" [disabled]="!subscribeForm.valid"><i class="bi bi-envelope-at-fill"></i></button>
+                        </form>
+                      </div>
+                      <div class="mt-1" *ngIf="subscribeForm.get('to_email')?.invalid && subscribeForm.get('email')?.touched">
+                        <small class="text-danger" *ngIf="subscribeForm.get('to_email')?.errors?.['email']">El email no es válido.</small>
                       </div>
                   </div>
               </div>
@@ -66,7 +68,7 @@
                           <a href="#"><i class="bi bi-facebook"></i></a>
                           <a href="#"><i class="bi bi-twitter-x"></i></a>
                           <a href="#"><i class="bi bi-google"></i></a>
-                      </div>
+                </div>
               </div>
           </div>
       </div>

@@ -8,12 +8,14 @@
       </span>
     </a>
 
-    <a *ngIf="isLoggedInNav()" class="navbar-brand" routerLink="/deposit-page" title="Información">
-      <img src="../../../../assets/money.svg" alt="Logo" width="37" height="32" class="d-inline-block align-text-top">
-      <span class="me-2 ms-n1 exception">
-        {{user?.balance}} €
-      </span>
-    </a>
+      <a *ngIf="isLoggedInNav()" class="navbar-brand" routerLink="/deposit-page" title="Información">
+        <img src="../../../../assets/money.svg" alt="Logo" width="37" height="32" class="d-inline-block align-text-top">
+        <span class="me-2 ms-n1 exception font-size-custom">
+          {{user?.balance}} €
+        </span>
+      </a>
+
+
 
     <button class="navbar-toggler m-mt-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" (click)="invokeToggle()">
       <span class="navbar-toggler-icon"></span>

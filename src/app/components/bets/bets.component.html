@@ -10,7 +10,9 @@
             <div class="card-body">
               <h2 class="card-title">{{deporte.nombre}}</h2>
               <p class="card-text">{{deporte.descripcion}}</p>
-              <a [routerLink]="[deporte.ruta]" class="btn btn-lg btn-primary">Ir a apostar</a>
+              <a [routerLink]="[deporte.ruta]" class="btn btn-lg btn-primary disabled">
+                <img id="lockSvg" src="../../../assets/lock.svg" class="img-fluid"/>
+                Ir a apostar</a>
               <p class="card-text"><small class="text-body-secondary">Actualizado hace {{deporte.minutos}} min.</small></p>
             </div>
           </div>

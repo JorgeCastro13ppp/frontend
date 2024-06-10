@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from 'src/app/shared/interfaces/user.interface';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { UserService } from 'src/app/shared/services/user.service';
@@ -12,7 +13,7 @@ export class ProfileComponent implements OnInit {
   profileImage: string = '../../../assets/profile-page-image.png';
   user:User | null = null;
 
-  constructor(private userService:UserService) { }
+  constructor(private userService:UserService,private router:Router,private authService:AuthService) { }
 
   ngOnInit(): void {
     this.userService.getUserByEmail().subscribe(
@@ -63,6 +64,27 @@ export class ProfileComponent implements OnInit {
     const customToast = document.getElementById('customToast');
     if (customToast) {
       customToast.classList.add('d-none'); // Ocultar el toast al sacar el ratón de la imagen
+    }
+  }
+
+  deleteAccount() {
+    if (confirm('¿Estás seguro de que deseas borrar tu cuenta?')) {
+      sessionStorage.clear();
+      this.userService.deleteUser().subscribe(
+        () => {
+          alert('Tu cuenta ha sido borrada exitosamente.');
+        },
+        (error) => {
+          console.error('Error al borrar la cuenta:', error);
+          alert('Hubo un error al borrar tu cuenta.');
+        },
+        () => {
+          // Limpiar el sessionStorage y cerrar sesión
+          sessionStorage.clear();
+          this.authService.logOut();
+          this.router.navigate(['/home'])
+        }
+      );
     }
   }
 

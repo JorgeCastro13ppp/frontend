@@ -1,5 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
+import { User } from '../../interfaces/user.interface';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,10 +11,19 @@ import { AuthService } from '../../services/auth.service';
 export class NavbarComponent implements OnInit {
 
   @Input() toggleMethod: Function | undefined;
+  user:User | null = null;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService,private userService:UserService) { }
 
   ngOnInit(): void {
+    this.userService.getUserByEmail().subscribe(
+      (user: User) => {
+        this.user = user;
+      },
+      (error) => {
+        console.error('Error al obtener el usuario:', error);
+      }
+    );
   }
 
   invokeToggle() {

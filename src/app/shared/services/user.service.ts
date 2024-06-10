@@ -45,5 +45,13 @@ export class UserService {
     return this.http.put<User>(url, { amount: this.withDrawAmount });
   }
 
+  // Método para eliminar un usuario por su correo electrónico
+  deleteUser(): Observable<void> {
+    if (!this.userEmail) {
+      throw new Error('No se ha iniciado sesión');
+    }
+    const url = `${this.apiUrl}/users/delete/${this.userEmail}`;
+    return this.http.delete<void>(url);
+  }
 
 }

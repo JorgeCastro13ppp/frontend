@@ -42,7 +42,7 @@ export class RegisterComponent implements OnInit {
       };
       this.authService.register(registerData).subscribe(
         response => {
-          alert('Te has registrado, serás redirigido al login');
+          alert('Te has registrado, serás redirigido al inicio de sesión');
           console.log('Usuario registrado con éxito', response);
           this.registerForm.reset();
           setTimeout(() => {
@@ -51,10 +51,18 @@ export class RegisterComponent implements OnInit {
         },
         error => {
           console.error('Error en el registro', error);
+          if (error.error && error.error.errors && error.error.errors.email) {
+            // El error es debido a que el correo electrónico ya está en uso
+            alert('El correo electrónico ya está en uso. Por favor, intenta con otro.');
+          } else {
+            // Otro tipo de error
+            alert('Hubo un error en el registro. Por favor, inténtalo de nuevo más tarde.');
+          }
         }
       );
     }
   }
+
 
   markCheckbox() {
     this.registerForm.get('termsAccepted')?.setValue(true);

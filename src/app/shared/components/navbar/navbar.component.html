@@ -1,10 +1,17 @@
 
 <nav class="navbar navbar-expand-md bg-primary navbar-fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="https://www.flashscore.es/" title="Información">
+    <a *ngIf="!isLoggedInNav()" class="navbar-brand" href="https://www.flashscore.es/" title="Información">
       <img src="../../../../assets/bet365-svgrepo-com.svg" alt="Logo" width="37" height="32" class="d-inline-block align-text-top">
       <span class="me-2 ms-n1 exception">
         BETS
+      </span>
+    </a>
+
+    <a *ngIf="isLoggedInNav()" class="navbar-brand" routerLink="/deposit-page" title="Información">
+      <img src="../../../../assets/money.svg" alt="Logo" width="37" height="32" class="d-inline-block align-text-top">
+      <span class="me-2 ms-n1 exception">
+        {{user?.balance}} €
       </span>
     </a>
 

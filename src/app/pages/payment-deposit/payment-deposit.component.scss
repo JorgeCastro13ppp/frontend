@@ -1,16 +1,57 @@
 @import '../../../../scss/custom.scss';
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300&display=swap');
-.container-payment{
-  height: 100vh;
-  overflow: hidden;
-  background: #0f0c29;
+
+.margin-custom{
+  margin-top: 5rem;
+}
+
+.container-background{
   background: -webkit-linear-gradient(to right, rgb(36, 36, 36), rgb(122, 122, 122));
   background: linear-gradient(to right, rgb(36, 36, 36), rgb(122, 122, 122));
+  overflow: hidden;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.container-payment{
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: "Poppins";
 }
+
+@media (max-width: 576px) {
+  .container-payment {
+    margin-bottom: 4.25rem; /* Cambiar el margen inferior para pantallas menores o iguales a 576px */
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .container-payment {
+    margin-bottom: 3.75rem; /* Cambiar el margen inferior para pantallas mayores a 576px y menores o iguales a 768px */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .container-payment {
+    margin-bottom: 3.5rem; /* Cambiar el margen inferior para pantallas mayores a 768px y menores o iguales a 992px */
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .container-payment {
+    margin-bottom: 3.25rem; /* Cambiar el margen inferior para pantallas mayores a 992px y menores o iguales a 1200px */
+  }
+}
+
+@media (min-width: 1200px) {
+  .container-payment {
+    margin-bottom: 0rem; /* Cambiar el margen inferior para pantallas mayores a 1200px */
+  }
+}
+
+
+
 .modal-payment {
   background: #FFFFFF;
   box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
@@ -38,6 +79,7 @@
   padding: 0;
   border: 0;
   outline: none;
+  width: 100%;
 }
 .paymentother button svg {
   height: 18px;

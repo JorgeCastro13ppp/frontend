@@ -1,8 +1,11 @@
-<div class="container-payment">
+<div class="container-background">
+  <h1 class="text-white text-center display-1 margin-custom">Depositar</h1>
+  <div class="container-payment">
   <div class="modal-payment">
     <form class="form-payment">
       <div class="paymentother">
-        <button name="apple-pay" type="button">
+        <a href="https://www.apple.com/es/apple-pay/">
+          <button name="apple-pay" type="button">
           <svg xml:space="preserve" viewBox="0 0 512 210.2" y="0px" x="0px" id="Layer_1" version="1.1"
             xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -10,8 +13,12 @@
               id="XMLID_34_"></path>
           </svg>
         </button>
-        <button name="google-pay" type="button">
-          <svg fill="none" viewBox="0 0 80 39" height="39" width="80" xmlns="http://www.w3.org/2000/svg">
+        </a>
+
+        <a href="https://pay.google.com/intl/es_es/about/">
+          <button href="https://pay.google.com/intl/es_es/about/" name="google-pay" type="button">
+
+            <svg fill="none" viewBox="0 0 80 39" height="39" width="80" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_134_34)">
               <path fill="#5F6368"
                 d="M37.8 19.7V29H34.8V6H42.6C44.5 6 46.3001 6.7 47.7001 8C49.1001 9.2 49.8 11 49.8 12.9C49.8 14.8 49.1001 16.5 47.7001 17.8C46.3001 19.1 44.6 19.8 42.6 19.8L37.8 19.7ZM37.8 8.8V16.8H42.8C43.9 16.8 45.0001 16.4 45.7001 15.6C47.3001 14.1 47.3 11.6 45.8 10.1L45.7001 10C44.9001 9.2 43.9 8.7 42.8 8.8H37.8Z">
@@ -42,23 +49,25 @@
             </defs>
           </svg>
         </button>
+        </a>
+
       </div>
       <div class="separator-payment">
         <hr class="line-payment">
-        <p>OR</p>
+        <p>O <br>INGRESAR DATOS MANUALMENTE</p>
         <hr class="line-payment">
       </div>
       <div class="card-info-payment">
         <div class="input-container">
-          <label for="inputField" class="input-label">Card holder name</label>
-          <input id="inputField" name="inputField" class="input-field" type="text" placeholder="Enter your full name">
+          <label for="inputField" class="input-label">Nombre del titular de la tarjeta</label>
+          <input id="inputField" name="inputField" class="input-field" type="text" placeholder="Ingresa tu nombre completo">
         </div>
         <div class="input-container">
-          <label for="cardNumber" class="input-label">Card Number</label>
+          <label for="cardNumber" class="input-label">Número de tarjeta</label>
           <input id="cardNumber" name="cardNumber" class="input-field" type="number" placeholder="0000 0000 0000 0000">
         </div>
         <div class="input-container">
-          <label for="expiryDate" class="input-label">Expiry Date / CVV</label>
+          <label for="expiryDate" class="input-label">Fecha de caducidad / CVV</label>
           <div class="split-payment">
             <input id="expiryDate" name="expiryDate" class="input-field" type="text" placeholder="01/23">
             <input id="cvv" name="cvv" class="input-field" type="number" placeholder="CVV">
@@ -71,5 +80,7 @@
     </form>
   </div>
 </div>
+</div>
+
 
 

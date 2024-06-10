@@ -1,42 +1,51 @@
-<div class="container container-text">
-  <div class="row text-center">
-    <h1 class="display-1">Guía</h1>
-    <p id="textInfo">Esta página está dedicada a explicar los diferentes juegos para usuarios principiantes que no sepan
-       cómo jugar, o que quieran profundizar en el entendimiento de las reglas. Existen 4 juegos dentro de esta página:
-    </p>
-    <div class="list-group">
-      <a href="https://www.casasdeapuestas.com/ruleta/europea/" target="_blank" class="list-group-item list-group-item-action list-group-item-primary">Ruleta europea online</a>
-      <a href="https://apuestasonline.net/casinos/tragaperras/como-jugar/" target="_blank" class="list-group-item list-group-item-action list-group-item-primary">Tragaperras/slots online</a>
-      <a href="https://pokerplanet.io/es/" target="_blank" class="list-group-item list-group-item-action list-group-item-primary">Póker Texas Hold'em</a>
-      <a href="https://www.guiacasino.com/estrategias-del-blackjack#:~:text=Distintas%20estrategias%20blackjack%20afectan%20a%20las%20probabilidades%201,de%20un%20Sistema%20de%20Apuesta%20en%20Blackjack%20" target="_blank" class="list-group-item list-group-item-action list-group-item-primary">Blackjack</a>
+<div class="container-img-background">
+  <div class="container container-text ">
+    <div class="row text-center">
+      <h1 class="display-1 text-white mt-4">Guía</h1>
+      <p id="textInfo">Esta página está dedicada a explicar los diferentes juegos para usuarios principiantes que no sepan
+         cómo jugar, o que quieran profundizar en el entendimiento de las reglas. Existen 4 juegos dentro de esta página:
+      </p>
+      <div class="list-group">
+        <a href="https://www.casasdeapuestas.com/ruleta/europea/" target="_blank" class="list-group-item list-group-item-action list-group-item-primary">Ruleta europea online</a>
+        <a href="https://apuestasonline.net/casinos/tragaperras/como-jugar/" target="_blank" class="list-group-item list-group-item-action list-group-item-primary">Tragaperras/slots online</a>
+        <a href="https://pokerplanet.io/es/" target="_blank" class="list-group-item list-group-item-action list-group-item-primary">Póker Texas Hold'em</a>
+        <a href="https://www.guiacasino.com/estrategias-del-blackjack#:~:text=Distintas%20estrategias%20blackjack%20afectan%20a%20las%20probabilidades%201,de%20un%20Sistema%20de%20Apuesta%20en%20Blackjack%20" target="_blank" class="list-group-item list-group-item-action list-group-item-primary">Blackjack</a>
+      </div>
+      <p class="text-white" id="textInfo">Para acceder a estrategias y consejos pincha en cualquiera de los elementos de la lista.</p>
     </div>
-    <p class="text-secondary" id="textInfo">Para acceder a estrategias y consejos pincha en cualquiera de los elementos de la lista</p>
   </div>
-</div>
+  <hr>
+  <div class="carousel-container">
+    <p class="text-white text-carousel">Pasa el ratón encima del carrusel para hacer que se detenga. Puedes ir a directamente a jugar clickando el botón correspondiente:</p>
+    <div class="carousel-track">
+      <div class="card text-bg-primary" *ngFor="let card of cards.concat(cards)">
+        <img [src]="card.image" class="card-img" alt=""/>
+        <div class="card-body">
+          <h5 class="card-title">{{ card.title }}</h5>
+          <p class="card-text">{{ card.text }}</p>
+          <a [routerLink]="[card.route]" class="btn btn-lg btn-secondary">Jugar</a>
+          <p class="card-text"><small>Actualizado hace {{card.minutes}} min.</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<div class="carousel-container">
-  <div class="carousel-track">
-    <div class="card text-bg-primary" *ngFor="let card of cards.concat(cards)">
-      <img [src]="card.image" class="card-img" alt=""/>
-      <div class="card-body">
-        <h5 class="card-title">{{ card.title }}</h5>
-        <p class="card-text">{{ card.text }}</p>
-        <p class="card-text"><small>Last updated 3 mins ago</small></p>
-        <a [routerLink]="[card.route]" class="btn btn-secondary">Jugar</a>
+  <div class="container-alert">
+    <div class="row">
+      <div class="alert alert-info d-flex align-items-center" role="alert">
+        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+          <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+        </svg>
+        <div>
+          Recuerda jugar con responsabilidad. <a href="http://www.apalmadrid.org/#/home" class="alert-link" target="_blank">Pincha aquí si necesitas ayuda </a>.
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="container-alert">
-  <div class="row">
-    <div class="alert alert-info d-flex align-items-center" role="alert">
-      <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
-        <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-      </svg>
-      <div>
-        Recuerda jugar con responsabilidad. <a href="http://www.apalmadrid.org/#/home" class="alert-link" target="_blank">Pincha aquí si necesitas ayuda </a>.
-      </div>
-    </div>
-  </div>
-</div>
+
+
+
+
+

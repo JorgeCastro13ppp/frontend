@@ -46,7 +46,7 @@
 
 @media (min-width: 1200px) {
   .container-payment {
-    margin-bottom: 0rem; /* Cambiar el margen inferior para pantallas mayores a 1200px */
+    margin-bottom: 3rem; /* Cambiar el margen inferior para pantallas mayores a 1200px */
   }
 }
 
@@ -203,4 +203,19 @@
 
 #cvv{
   width: 8rem;
+}
+
+.disabled{
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.disabled::before{
+  background: #000;
+  transform: none;
+  transition:none;
+}
+
+.disabled:hover{
+  background: #000;
 }

@@ -59,22 +59,57 @@
       </div>
       <div class="card-info-withdraw">
         <div class="input-container">
-          <label for="inputField" class="input-label">Nombre del titular de la tarjeta</label>
-          <input id="inputField" name="inputField" class="input-field" type="text" placeholder="Ingresa tu nombre completo">
+          <label for="nombreTitular" class="input-label">Nombre del titular de la tarjeta</label>
+          <input id="nombreTitular" name="nombreTitular" class="input-field" type="text"
+            placeholder="Ingresa tu nombre completo" formControlName="nombreTitular">
+          <div *ngIf="withDrawForm.controls['nombreTitular'].invalid && (withDrawForm.controls['nombreTitular'].dirty || withDrawForm.controls['nombreTitular'].touched)">
+            <small class="text-danger" *ngIf="withDrawForm.controls['nombreTitular'].errors?.['required']">
+              El nombre es obligatorio
+            </small>
+            <small class="text-danger" *ngIf="withDrawForm.controls['nombreTitular'].errors?.['minlength']">
+              El nombre debe tener al menos 10 caracteres
+            </small>
+          </div>
         </div>
         <div class="input-container">
-          <label for="cardNumber" class="input-label">Número de tarjeta</label>
-          <input id="cardNumber" name="cardNumber" class="input-field" type="number" placeholder="0000 0000 0000 0000">
+          <label for="numeroTarjeta" class="input-label">Número de tarjeta</label>
+          <input id="numeroTarjeta" name="numeroTarjeta" class="input-field" type="text"
+            placeholder="0000 0000 0000 0000" formControlName="numeroTarjeta">
+          <div *ngIf="withDrawForm.controls['numeroTarjeta'].invalid && (withDrawForm.controls['numeroTarjeta'].dirty || withDrawForm.controls['numeroTarjeta'].touched)">
+            <small class="text-danger" *ngIf="withDrawForm.controls['numeroTarjeta'].errors?.['required']">
+              El número de tarjeta es obligatorio
+            </small>
+            <small class="text-danger" *ngIf="withDrawForm.controls['numeroTarjeta'].errors?.['pattern']">
+              El número de tarjeta debe tener 16 dígitos
+            </small>
+          </div>
         </div>
         <div class="input-container">
           <label for="expiryDate" class="input-label">Fecha de caducidad / CVV</label>
-          <div class="split-withdraw">
-            <input id="expiryDate" name="expiryDate" class="input-field" type="text" placeholder="01/23">
-            <input id="cvv" name="cvv" class="input-field" type="number" placeholder="CVV">
+          <div class="split-payment">
+            <input id="expiryDate" name="expiryDate" class="input-field" type="text" placeholder="01/23"
+              formControlName="fechaCaducidad">
+            <input id="cvv" name="cvv" class="input-field" type="number" placeholder="CVV" formControlName="cvv">
+            <div *ngIf="withDrawForm.controls['fechaCaducidad'].invalid && (withDrawForm.controls['fechaCaducidad'].dirty || withDrawForm.controls['fechaCaducidad'].touched)">
+              <small class="text-danger" *ngIf="withDrawForm.controls['fechaCaducidad'].errors?.['required']">
+                La fecha de caducidad es obligatoria
+              </small>
+              <small class="text-danger" *ngIf="withDrawForm.controls['fechaCaducidad'].errors?.['pattern']">
+                La fecha de caducidad debe estar en formato MM/YY
+              </small>
+            </div>
+            <div *ngIf="withDrawForm.controls['cvv'].invalid && (withDrawForm.controls['cvv'].dirty || withDrawForm.controls['cvv'].touched)">
+              <small class="text-danger" *ngIf="withDrawForm.controls['cvv'].errors?.['required']">
+                El CVV es obligatorio
+              </small>
+              <small class="text-danger" *ngIf="withDrawForm.controls['cvv'].errors?.['pattern']">
+                El CVV debe tener 3 dígitos
+              </small>
+            </div>
           </div>
         </div>
       </div>
-      <button class="checkout-withdraw">
+      <button class="checkout-withdraw" [disabled]="!withDrawForm.valid" [class.disabled]="withDrawForm.invalid">
         <span>Retirar</span>
       </button>
     </form>

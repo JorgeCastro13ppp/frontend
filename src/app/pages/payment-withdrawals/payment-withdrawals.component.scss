@@ -22,31 +22,31 @@
 
 @media (max-width: 576px) {
   .container-withdraw {
-    margin-bottom: 4.25rem; /* Cambiar el margen inferior para pantallas menores o iguales a 576px */
+    margin-bottom: 4.25rem;
   }
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
   .container-withdraw {
-    margin-bottom: 3.75rem; /* Cambiar el margen inferior para pantallas mayores a 576px y menores o iguales a 768px */
+    margin-bottom: 3.75rem;
   }
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
   .container-withdraw {
-    margin-bottom: 3.5rem; /* Cambiar el margen inferior para pantallas mayores a 768px y menores o iguales a 992px */
+    margin-bottom: 3.5rem;
   }
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
   .container-withdraw {
-    margin-bottom: 3.25rem; /* Cambiar el margen inferior para pantallas mayores a 992px y menores o iguales a 1200px */
+    margin-bottom: 3.25rem;
   }
 }
 
 @media (min-width: 1200px) {
   .container-withdraw {
-    margin-bottom: 0rem; /* Cambiar el margen inferior para pantallas mayores a 1200px */
+    margin-bottom: 3rem;
   }
 }
 
@@ -203,4 +203,19 @@
 
 #cvv{
   width: 8rem;
+}
+
+.disabled{
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.disabled::before{
+  background: #000;
+  transform: none;
+  transition:none;
+}
+
+.disabled:hover{
+  background: #000;
 }

@@ -7,8 +7,9 @@
         <label>Introduce tu email</label>
         </div>
       <div class="input-field">
-        <input type="password" [(ngModel)]="password" name="password" required>
+        <input [type]="showPassword ? 'text' : 'password'" [(ngModel)]="password" name="password" required>
         <label>Introduce tu contraseña</label>
+        <i class="bi" [ngClass]="showPassword ? 'bi bi-eye-slash' : 'bi bi-eye'" (click)="togglePasswordVisibility()"></i>
       </div>
       <div class="forget">
         <label for="remember">

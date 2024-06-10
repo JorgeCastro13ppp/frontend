@@ -17,21 +17,21 @@
 
             </div>
             <div class="mt-name ms-3">
-              <h2>Nombre de usuario</h2>
+              <h2>{{user?.name}}</h2>
             </div>
           </div>
           <div class="p-custom-info text-black bg-body-secondary">
             <div class="d-flex justify-content-end text-center py-1 text-body">
               <div>
-                <p class="mb-1 number-custom-size fw-custom-number">1020.00 €</p>
+                <p class="mb-1 number-custom-size fw-custom-number">{{user?.balance}} €</p>
                 <p class="p-custom-size text-muted mb-0">Balance</p>
               </div>
               <div class="px-3">
-                <p class="mb-1 number-custom-size fw-custom-number">1000.00 €</p>
+                <p class="mb-1 number-custom-size fw-custom-number">0.00 €</p>
                 <p class="p-custom-size text-muted mb-0">Bono</p>
               </div>
               <div>
-                <p class="mb-1 number-custom-size fw-custom-number">20.00 €</p>
+                <p class="mb-1 number-custom-size fw-custom-number">{{user?.balance}} €</p>
                 <p class="p-custom-size text-muted mb-0">A retirar</p>
               </div>
             </div>
@@ -40,9 +40,23 @@
             <div class="mb-5 text-body">
               <h5 class="h5-custom-size lead fw-normal mb-1">Cuenta</h5>
               <div class="p-4 bg-body-secondary">
+                <p class="action-custom-size font-italic mb-1">Id de la cuenta: <span class="text-primary">{{user?.id}}</span> </p>
+                <p class="action-custom-size font-italic mb-1">Correo electrónico: <span class="text-primary">{{user?.email}}</span></p>
+                <p class="action-custom-size font-italic mb-1">Nombre: <span class="text-primary">{{user?.name}}</span></p>
+                <p class="action-custom-size font-italic mb-0">Cuenta creada : <span class="text-primary"> {{ user?.created_at | date: 'yyyy-MM-dd HH:mm:ss' }}</span></p>
+
+              </div>
+            </div>
+          </div>
+          <div class="card-body p-4 text-black">
+            <div class="mb-5 text-body">
+              <h5 class="h5-custom-size lead fw-normal mb-1">Acciones</h5>
+              <div class="p-4 bg-body-secondary">
                 <p class="fw-custom-p action-custom-size font-italic mb-1"><a class="text-decoration-none" [routerLink]="['/deposit-page']">Ingresar</a></p>
                 <p class="fw-custom-p action-custom-size font-italic mb-1"><a class="text-decoration-none" [routerLink]="['/withdrawals-page']">Retirar</a></p>
-                <p class="fw-custom-p action-custom-size font-italic mb-0"><a class="text-decoration-none" >Historial</a></p>
+                <p class="fw-custom-p action-custom-size font-italic mb-1"><a class="text-decoration-none" href="#">Historial</a></p>
+                <p class="fw-custom-p action-custom-size font-italic mb-0"><a id="delete" class="text-decoration-none" href="#">Borrar cuenta</a></p>
+
               </div>
             </div>
             <div class="row g-2">

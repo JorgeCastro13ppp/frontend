@@ -1,5 +1,10 @@
 <div class="container-background">
   <h1 class="text-white text-center display-1 margin-custom">Depositar</h1>
+  <!-- Alerta de Bootstrap -->
+<div class="alert alert-info alert-dismissible fade show m-4 d-block d-flex justify-content-center align-items-center" role="alert">
+  <strong class="text-dark">Los depósitos siempre serán de 250.00€.</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
   <div class="container-payment">
     <div class="modal-payment">
       <form class="form-payment" [formGroup]="depositForm" (ngSubmit)="submitForm()">
@@ -115,3 +120,5 @@
     </div>
   </div>
 </div>
+
+

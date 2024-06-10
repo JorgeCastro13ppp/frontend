@@ -19,8 +19,9 @@
         <small class="text-danger" *ngIf="registerForm.get('email')?.errors?.['email']">El email no es válido</small>
       </div>
       <div class="input-field">
-        <input type="password" formControlName="password" required>
+        <input [type]="passwordFieldType" formControlName="password" required>
         <label>Introduce tu contraseña</label>
+        <i [ngClass]="passwordFieldType === 'password' ? 'bi bi-eye' : 'bi bi-eye-slash'" class="toggle-password" (click)="togglePasswordVisibility()"></i>
       </div>
       <div *ngIf="registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)">
         <small class="text-danger" *ngIf="registerForm.get('password')?.errors?.['required']">La contraseña es requerida</small>
@@ -29,8 +30,9 @@
         <small class="text-danger" *ngIf="registerForm.hasError('noSonIguales')">Las contraseñas no coinciden</small>
       </div>
       <div class="input-field">
-        <input type="password" formControlName="confirmPassword" required>
+        <input [type]="confirmPasswordFieldType" formControlName="confirmPassword" required>
         <label>Introduce confirmación de tu contraseña</label>
+        <i [ngClass]="confirmPasswordFieldType === 'password' ? 'bi bi-eye' : 'bi bi-eye-slash'" class="toggle-password" (click)="toggleConfirmPasswordVisibility()"></i>
       </div>
       <div *ngIf="registerForm.get('confirmPassword')?.invalid && (registerForm.get('confirmPassword')?.dirty || registerForm.get('confirmPassword')?.touched)">
         <small class="text-danger" *ngIf="registerForm.hasError('required')">La confirmación de contraseña es requerida</small>

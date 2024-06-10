@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/shared/interfaces/user.interface';
+import { AuthService } from 'src/app/shared/services/auth.service';
+import { UserService } from 'src/app/shared/services/user.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -7,10 +10,19 @@ import { Component, OnInit } from '@angular/core';
 export class ProfileComponent implements OnInit {
 
   profileImage: string = '../../../assets/profile-page-image.png';
+  user:User | null = null;
 
-  constructor() { }
+  constructor(private userService:UserService) { }
 
   ngOnInit(): void {
+    this.userService.getUserByEmail().subscribe(
+      (user: User) => {
+        this.user = user;
+      },
+      (error) => {
+        console.error('Error al obtener el usuario:', error);
+      }
+    );
   }
 
   onFileSelected(event: any): void {

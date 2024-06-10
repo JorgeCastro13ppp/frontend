@@ -1,5 +1,10 @@
 export interface User {
-  id: number;
-  created_at: string | null;
-  updated_at: string | null;
+  id:                number;
+  name:              string;
+  email:             string;
+  email_verified_at: null;
+  balance:           string;
+  created_at:        Date;
+  updated_at:        Date;
 }
+

@@ -11,6 +11,7 @@ export class LoginComponent implements OnInit {
 
   email: string = '';
   password: string = '';
+  showPassword: boolean = false;
 
   constructor(private authService: AuthService, private router:Router) { }
 
@@ -40,6 +41,10 @@ export class LoginComponent implements OnInit {
         alert('Contraseña o usuario incorrecto');
       }
     );
+  }
+
+  togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
   }
 }
 

@@ -11,6 +11,9 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
+  passwordFieldType: string = 'password';
+  confirmPasswordFieldType: string = 'password';
+
   registerForm: FormGroup = new FormGroup({
     name: new FormControl('',[Validators.required, Validators.minLength(8)]),
     email: new FormControl('',[Validators.required, Validators.email]),
@@ -59,6 +62,14 @@ export class RegisterComponent implements OnInit {
 
   unMarkCheckbox(){
     this.registerForm.get('termsAccepted')?.setValue(false);
+  }
+
+  togglePasswordVisibility() {
+    this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password';
+  }
+
+  toggleConfirmPasswordVisibility() {
+    this.confirmPasswordFieldType = this.confirmPasswordFieldType === 'password' ? 'text' : 'password';
   }
 
 }

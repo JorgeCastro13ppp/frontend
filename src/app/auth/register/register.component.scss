@@ -68,6 +68,14 @@ h2 {
   top: 10px;
   transform: translateY(-120%);
 }
+.toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #fff;
+}
 .forget {
   display: flex;
   align-items: center;

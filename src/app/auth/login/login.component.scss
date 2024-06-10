@@ -66,6 +66,15 @@ h2 {
   top: 10px;
   transform: translateY(-120%);
 }
+.bi {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.2em; /* Ajusta el tamaño del icono según sea necesario */
+}
 .forget {
   display: flex;
   align-items: center;

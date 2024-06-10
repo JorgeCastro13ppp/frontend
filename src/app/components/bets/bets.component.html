@@ -1,0 +1,23 @@
+
+  <div class="container-background">
+    <div class="container container-margin-custom container-cards">
+      <div class="row">
+        <div *ngFor="let deporte of deportes" class="col-md-4 mb-4">
+          <div class="card">
+            <img [src]="deporte.imgUrl" class="card-img-top" alt="{{deporte.nombre}}">
+            <div class="card-body">
+              <h5 class="card-title">{{deporte.nombre}}</h5>
+              <p class="card-text">{{deporte.descripcion}}</p>
+              <a [routerLink]="[deporte.ruta]" class="btn btn-lg btn-primary">Ir a apostar</a>
+              <p class="card-text"><small class="text-body-secondary">Actualizado hace {{deporte.minutos}} mins</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+

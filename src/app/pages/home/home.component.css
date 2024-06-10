@@ -4,7 +4,7 @@
   background-image: url("../../../assets/homeBet.jpg");
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   box-sizing: border-box;
   display: flex;
@@ -73,6 +73,7 @@ p {
 }
 .row-custom {
   justify-content: center;
+  margin-top: 10rem;
 }
 
 .home-logo-holder {

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit {
   email: string = '';
   password: string = '';
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router:Router) { }
 
   ngOnInit(): void {
 
@@ -31,6 +32,7 @@ export class LoginComponent implements OnInit {
         this.authService.setSessionTimeout();
         // Mostrar alerta de inicio de sesión exitoso
         alert('¡Te has logueado!');
+        this.router.navigate(['/home-page']);
       },
       (error) => {
         console.error('Error al iniciar sesión:', error);

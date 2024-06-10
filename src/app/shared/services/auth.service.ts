@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../interfaces/user.interface';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -11,6 +11,7 @@ export class AuthService {
 
   constructor(private httpClient:HttpClient,private router:Router) { }
   private apiUrl = 'https://back-end-production-71ca.up.railway.app/api';
+
 
   getUser() {
     return this.httpClient.get<User>(`https://back-end-production-71ca.up.railway.app/tests`);
@@ -24,16 +25,22 @@ export class AuthService {
     return this.httpClient.post<any>(`${this.apiUrl}/login`, { email, password });
   }
 
-  logout() {
+  logOut() {
     // Eliminar la información del usuario del sessionStorage
     sessionStorage.removeItem('currentUser');
   }
 
+
   setSessionTimeout() {
     setTimeout(() => {
-      this.logout();
-       this.router.navigate(['/home']);
+      this.logOut();
+       this.router.navigate(['/home-page']);
        alert('Se ha finalizado sesión, ha pasado 1 hora');
     }, 3600000); // 3600000 milisegundos = 1 hora
   }
+
+  isLoggedIn(): boolean {
+    return !!sessionStorage.getItem('currentUser');
+  }
+
 }

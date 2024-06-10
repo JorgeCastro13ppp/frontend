@@ -81,19 +81,55 @@
             </li>
           </ul>
         </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#" routerLink="/profile-page" routerLinkActive="active">
+        <li class="nav-item dropdown d-md-block d-none">
+          <a class="nav-link dropdown-toggle" href="#" routerLinkActive="active" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <span>
-              <img src="../../../../assets/profile-dark.svg" alt="" id="svgNav" class="align-top"/>
-              Perfil
+              <img src="../../../../assets/more.svg" alt="" id="svgNav" class="align-top"/>
+              Ver más
+            </span>
+          </a>
+          <ul class="dropdown-menu overflow-auto bg-light text-center">
+            <li class="nav-item">
+              <a class="nav-link" href="#" routerLink="/help-page" routerLinkActive="active">
+                <span>
+                  <img src="../../../../assets/help.svg" alt="" id="svgNav" class="align-top"/>
+                  Ayuda
+                </span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" routerLink="/contact-page" routerLinkActive="active">
+                <span>
+                  <img src="../../../../assets/contact.svg" alt="" id="svgNav" class="align-top"/>
+                  Contacto
+                </span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item d-block d-md-none">
+          <a class="nav-link" href="#" routerLink="/help-page" routerLinkActive="active">
+            <span>
+              <img src="../../../../assets/help.svg" alt="" id="svgNav" class="align-top"/>
+              Ayuda
             </span>
           </a>
         </li>
+        <li class="nav-item d-block d-md-none">
+          <a class="nav-link" href="#" routerLink="/contact-page" routerLinkActive="active">
+            <span>
+              <img src="../../../../assets/contact.svg" alt="" id="svgNav" class="align-top"/>
+              Contacto
+            </span>
+          </a>
+        </li>
+
+
       </ul>
 
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item" #sessionStartRegister>
+      <ul  class="navbar-nav ms-auto">
+        <li *ngIf="!isLoggedInNav()" class="nav-item" #sessionStartRegister>
            <a class="nav-link" href="#" routerLink="/login" routerLinkActive="active">
             <span>
               <img src="../../../../assets/profile-dark.svg" alt="" id="svgNav" class="align-top"/>
@@ -101,14 +137,22 @@
             </span>
           </a>
         </li>
-        <!-- <li class="nav-item" #sessionLogout>
-          <a class="nav-link" href="#" routerLink="/login" routerLinkActive="active">
+        <li *ngIf="isLoggedInNav()" class="nav-item">
+          <a class="nav-link" href="#" routerLink="/profile-page" routerLinkActive="active">
             <span>
-              <img src="" alt="" id="svgNav" class="align-top"/>
+              <img src="../../../../assets/profile-dark.svg" alt="" id="svgNav" class="align-top"/>
+              Perfil
+            </span>
+          </a>
+        </li>
+         <li *ngIf="isLoggedInNav()" class="nav-item" #sessionLogout>
+          <a class="nav-link" href="#" routerLink="/login" routerLinkActive="active" (click)="logOutNav()">
+            <span>
+              <img src="../../../../assets/logout.svg" alt="" id="svgNav" class="align-top"/>
               Cerrar sesión
             </span>
           </a>
-        </li> -->
+        </li>
       </ul>
 
     </div>

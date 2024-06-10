@@ -24,3 +24,17 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-thumb:hover {
   background-color: black;
 }
+
+// Estilos específicos para el componente Navbar
+
+// Media query para el ancho mínimo de 800px
+@media (min-width: 800px) {
+  .navbar-expand-md .navbar-toggler {
+    display: none;
+  }
+
+  .navbar-expand-md {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+}

@@ -11,7 +11,7 @@
       <a *ngIf="isLoggedInNav()" class="navbar-brand" routerLink="/deposit-page" title="Información">
         <img src="../../../../assets/money.svg" alt="Logo" width="37" height="32" class="d-inline-block align-text-top">
         <span class="me-2 ms-n1 exception font-size-custom">
-          {{user?.balance}} €
+          {{ getUserBalanceParse() }} €
         </span>
       </a>
 

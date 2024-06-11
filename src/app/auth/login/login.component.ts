@@ -1,5 +1,6 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AlertService } from 'src/app/shared/services/alert.service';
 import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
@@ -13,7 +14,10 @@ export class LoginComponent implements OnInit {
   password: string = '';
   showPassword: boolean = false;
 
-  constructor(private authService: AuthService, private router:Router) { }
+  constructor(
+    private authService: AuthService,
+    private router:Router,
+    private alertService:AlertService) { }
 
   ngOnInit(): void {
 
@@ -32,13 +36,13 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem('currentUser', JSON.stringify(usuario));
         this.authService.setSessionTimeout();
         // Mostrar alerta de inicio de sesión exitoso
-        alert('¡Te has logueado!');
+        this.alertService.showAlert('¡Te has logueado!');  // Usa el servicio de alertas
         this.router.navigate(['/home-page']);
       },
       (error) => {
         console.error('Error al iniciar sesión:', error);
         // Mostrar alerta de error de inicio de sesión
-        alert('Contraseña o usuario incorrecto');
+        this.alertService.showAlert('Contraseña o usuario incorrecto');  // Usa el servicio de alertas
       }
     );
   }

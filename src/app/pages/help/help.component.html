@@ -5,6 +5,9 @@
         <h5 class="sidebar-heading text-white">Navegación de Preguntas</h5>
         <ul class="nav flex-column">
 
+          <li class="nav-item">
+            <a class="nav-link" (click)="scrollToQuestion('q21')">¿Por qué algunos items tienen un candado?</a>
+          </li>
             <li class="nav-item">
               <a class="nav-link" (click)="scrollToQuestion('q7')">¿Hay límites de depósito?</a>
             </li>
@@ -101,8 +104,6 @@
             </div>
           </div>
 
-          <!-- Añadir más preguntas aquí de la misma manera -->
-
           <div class="accordion-item" id="q3">
             <h2 class="accordion-header" id="headingThree">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -190,6 +191,19 @@
             <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#faqAccordion">
               <div class="accordion-body">
                 <p>Las apuestas en vivo te permiten apostar en eventos que ya están en curso, con cuotas que cambian en tiempo real.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item" id="q21">
+            <h2 class="accordion-header" id="headingTwentyOne">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwentyOne" aria-expanded="false" aria-controls="collapseTwentyOne">
+                ¿Por qué algunos items tienen un candado?
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>Algunos elementos de la página están desactivados debido a que no están completamente acabados y funcionales. Por ello, no están disponibles para el usuario temporalmente, están ahí porque se están implementando o se implementarán en un futuro .</p>
               </div>
             </div>
           </div>

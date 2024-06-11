@@ -1,0 +1,9 @@
+<div class="custom-alert" *ngIf="showAlert">
+  <div class="alert-content">
+    <span class="close-icon">
+      <i (click)="closeAlert()" class="bi bi-x-lg"></i>
+    </span>
+    <h2>{{ alertMessage }}</h2>
+  </div>
+
+</div>

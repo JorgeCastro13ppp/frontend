@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/shared/interfaces/user.interface';
+import { AlertService } from 'src/app/shared/services/alert.service';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { BalanceService } from 'src/app/shared/services/balance.service';
 import { UserService } from 'src/app/shared/services/user.service';
@@ -18,7 +19,8 @@ export class ProfileComponent implements OnInit {
     private userService:UserService,
     private router:Router,
     private authService:AuthService,
-    private userBalanceService:BalanceService) { }
+    private userBalanceService:BalanceService,
+    private alertService:AlertService) { }
 
   ngOnInit(): void {
     this.userService.getUserByEmail().subscribe(
@@ -81,11 +83,11 @@ export class ProfileComponent implements OnInit {
       sessionStorage.clear();
       this.userService.deleteUser().subscribe(
         () => {
-          alert('Tu cuenta ha sido borrada exitosamente.');
+          this.alertService.showAlert('Tu cuenta ha sido borrada exitosamente.');  // Usa el servicio de alertas
         },
         (error) => {
           console.error('Error al borrar la cuenta:', error);
-          alert('Hubo un error al borrar tu cuenta.');
+          this.alertService.showAlert('Hubo un error al borrar tu cuenta.');  // Usa el servicio de alertas
         },
         () => {
           // Limpiar el sessionStorage y cerrar sesión

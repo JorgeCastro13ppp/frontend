@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import emailjs from '@emailjs/browser';
+import { AlertService } from 'src/app/shared/services/alert.service';
 
 @Component({
   selector: 'app-contact',
@@ -13,7 +14,7 @@ export class ContactComponent implements OnInit {
 
   contactForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private http:HttpClient) { }
+  constructor(private fb: FormBuilder, private http:HttpClient, private alertService:AlertService) { }
 
 
 
@@ -37,7 +38,7 @@ export class ContactComponent implements OnInit {
         phone: this.contactForm.value.phone,
         message: this.contactForm.value.message,
         },"GIDzzd_Mz94Ysi5Z2");
-        alert('Mensaje enviado, revisa tu correo electrónico.');
+        this.alertService.showAlert('Mensaje enviado, revisa tu correo electrónico.');  // Usa el servicio de alertas
         this.contactForm.reset();
     } else {
       console.log('Formulario no válido');

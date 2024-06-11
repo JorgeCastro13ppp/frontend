@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AlertService } from 'src/app/shared/services/alert.service';
 import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
@@ -13,7 +14,11 @@ export class PaymentWithdrawalsComponent implements OnInit {
   withDrawForm:FormGroup = new FormGroup({});
 
 
-  constructor(private formBuilder:FormBuilder,private router:Router, private userService:UserService) { }
+  constructor(
+    private formBuilder:FormBuilder,
+    private router:Router,
+    private userService:UserService,
+    private alertService:AlertService) { }
 
   ngOnInit(): void {
     this.withDrawForm = this.formBuilder.group({
@@ -36,19 +41,19 @@ export class PaymentWithdrawalsComponent implements OnInit {
       this.userService.subtractBalance().subscribe(
         (response) => {
           console.log('Retiro realizado:', response);
-          alert('Se ha realizado el retiro.');
+          this.alertService.showAlert('Se ha realizado el retiro.');
           this.router.navigate(['/profile-page']);
         },
         (error) => {
           console.error('Error al realizar el retiro:', error);
-          alert('Error al realizar el retiro.');
+          this.alertService.showAlert('Error al realizar el retiro.');
           this.router.navigate(['/profile-page']);
         }
       );
     } else {
       // Mostrar errores o mensaje de que el formulario no es válido
       console.log('Formulario inválido, no se puede proceder con el retiro.');
-      alert('No se puede proceder con el retiro.');
+      this.alertService.showAlert('No se puede proceder con el retiro.');  // Usa el servicio de alertas
       this.router.navigate(['/profile-page']);
     }
   }

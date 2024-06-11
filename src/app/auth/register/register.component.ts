@@ -4,6 +4,7 @@ import { FormControl,FormGroup,Validators } from '@angular/forms';
  import { MustMatch } from '../../shared/ui/mustMatch.validator';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { Router } from '@angular/router';
+import { AlertService } from 'src/app/shared/services/alert.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -25,7 +26,10 @@ export class RegisterComponent implements OnInit {
      { validators: MustMatch}
   );
 
-  constructor(private authService:AuthService, private router:Router) { }
+  constructor(
+    private authService:AuthService,
+    private router:Router,
+    private alertService:AlertService) { }
 
   ngOnInit(): void {
   }
@@ -42,7 +46,7 @@ export class RegisterComponent implements OnInit {
       };
       this.authService.register(registerData).subscribe(
         response => {
-          alert('Te has registrado, serás redirigido al inicio de sesión');
+          this.alertService.showAlert('Te has registrado, serás redirigido al inicio de sesión');  // Usa el servicio de alertas
           console.log('Usuario registrado con éxito', response);
           this.registerForm.reset();
           setTimeout(() => {
@@ -53,10 +57,10 @@ export class RegisterComponent implements OnInit {
           console.error('Error en el registro', error);
           if (error.error && error.error.errors && error.error.errors.email) {
             // El error es debido a que el correo electrónico ya está en uso
-            alert('El correo electrónico ya está en uso. Por favor, intenta con otro.');
+            this.alertService.showAlert('El correo electrónico ya está en uso. Por favor, intenta con otro.');  // Usa el servicio de alertas
           } else {
             // Otro tipo de error
-            alert('Hubo un error en el registro. Por favor, inténtalo de nuevo más tarde.');
+            this.alertService.showAlert('Hubo un error en el registro. Por favor, inténtalo de nuevo más tarde.');  // Usa el servicio de alertas
           }
         }
       );

@@ -21,6 +21,7 @@ import { PaymentWithdrawalsComponent } from './pages/payment-withdrawals/payment
 import { HelpComponent } from './pages/help/help.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
+import { AlertComponent } from './shared/components/alert/alert.component';
 
 
 
@@ -40,7 +41,8 @@ import { FooterComponent } from './shared/components/footer/footer.component';
     PaymentWithdrawalsComponent,
     HelpComponent,
     ContactComponent,
-    FooterComponent
+    FooterComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,

@@ -20,7 +20,12 @@ export class RouletteComponent implements OnInit {
     { label:'Borrar', class:'btn btn-secondary', action:() => this.delete() },
     { label:'Repetir',class:'btn btn-warning', action:() => this.repeat() },
     { label:'Salir', class: 'btn btn-danger', action:() => this.exit() }
-  ]
+  ];
+  totalGames: number = 0;
+  totalWins: number = 0;
+  totalLosses: number = 0;
+  showAlert: boolean = false;
+  alertMessage: string = '';
 
   selectedNumberControl?:number;
   selectedMoneyControl?:number;
@@ -46,7 +51,44 @@ export class RouletteComponent implements OnInit {
   }
 
   play() {
-    throw new Error('Method not implemented.');
+    if (this.selectedNumberControl !== undefined && this.selectedMoneyControl !== undefined) {
+      this.totalGames++;
+      this.showAlertMessage('Ruleta girando...');
+
+      setTimeout(() => {
+        const winningNumber = Math.floor(Math.random() * 37);
+        this.showAlert = false;
+
+        setTimeout(() => {
+          this.showAlertMessage(`Número premiado: ${winningNumber}`, true);
+
+          setTimeout(() => {
+            this.showAlert = false;
+            if (winningNumber === this.selectedNumberControl) {
+              this.totalWins++;
+              this.showAlertMessage('¡Has ganado!', true);
+            } else {
+              this.totalLosses++;
+              this.showAlertMessage('Has perdido.', true);
+            }
+            this.delete(); // Llamar a la función delete al final del juego
+          }, 4000);
+        }, 100);
+      }, 4000);
+    } else {
+      this.showAlertMessage('Por favor, selecciona un número y un monto de dinero para jugar.', true);
+    }
+  }
+
+  showAlertMessage(message: string, hideAfterTimeout: boolean = false) {
+    this.alertMessage = message;
+    this.showAlert = true;
+
+    if (hideAfterTimeout) {
+      setTimeout(() => {
+        this.showAlert = false;
+      }, 5000);
+    }
   }
 
   exit() {

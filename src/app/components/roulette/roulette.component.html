@@ -22,6 +22,27 @@
   </div>
 </div>
 
+<!-- Alerta personalizada -->
+<div class="custom-alert" *ngIf="showAlert">
+  <div class="alert-content">
+    <h2>{{ alertMessage }}</h2>
+  </div>
+</div>
+
+<div class="container container-counters">
+  <div class="row">
+    <div class="col-4">
+      <h5>Partidas Jugadas: {{ totalGames }}</h5>
+    </div>
+    <div class="col-4">
+      <h5>Partidas Ganadas: {{ totalWins }}</h5>
+    </div>
+    <div class="col-4">
+      <h5>Partidas Perdidas: {{ totalLosses }}</h5>
+    </div>
+  </div>
+</div>
+
 <div class="container container-input">
 
   <div class="row" id="rowInputsTitle">

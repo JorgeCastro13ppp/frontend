@@ -87,7 +87,7 @@ export class ProfileComponent implements OnInit {
           // Limpiar el sessionStorage y cerrar sesión
           sessionStorage.clear();
           this.authService.logOut();
-          this.router.navigate(['/home'])
+          this.router.navigate(['/home']);
         }
       );
     }

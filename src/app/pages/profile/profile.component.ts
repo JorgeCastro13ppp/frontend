@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { User } from 'src/app/shared/interfaces/user.interface';
 import { AlertService } from 'src/app/shared/services/alert.service';
 import { AuthService } from 'src/app/shared/services/auth.service';
-import { BalanceService } from 'src/app/shared/services/balance.service';
 import { UserService } from 'src/app/shared/services/user.service';
 @Component({
   selector: 'app-profile',
@@ -19,17 +18,12 @@ export class ProfileComponent implements OnInit {
     private userService:UserService,
     private router:Router,
     private authService:AuthService,
-    private userBalanceService:BalanceService,
     private alertService:AlertService) { }
 
   ngOnInit(): void {
     this.userService.getUserByEmail().subscribe(
       (user: User) => {
         this.user = user;
-        // Convertir el balance del usuario a tipo number
-        const balanceNumber = parseFloat(user.balance);
-        // Guardar el balance del usuario en el servicio compartido
-        this.userBalanceService.setUserBalance(balanceNumber);
       },
       (error) => {
         console.error('Error al obtener el usuario:', error);

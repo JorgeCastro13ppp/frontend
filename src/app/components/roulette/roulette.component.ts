@@ -31,6 +31,8 @@ export class RouletteComponent implements OnInit {
   selectedNumberControl?:number;
   selectedMoneyControl?:number;
 
+  previousBet: { number: number; money: number } | null = null;
+
   selectNumber(num: number) {
     this.selectedNumberControl=num;
     console.log(this.selectedNumberControl);
@@ -54,6 +56,13 @@ export class RouletteComponent implements OnInit {
   play() {
     if (this.selectedNumberControl !== undefined && this.selectedMoneyControl !== undefined) {
       this.totalGames++;
+
+      // Guardar la apuesta actual antes de borrar los inputs
+      this.previousBet = {
+        number: this.selectedNumberControl,
+        money: this.selectedMoneyControl
+      };
+
       this.alertService.showAlert('Ruleta girando...');
 
       setTimeout(() => {
@@ -76,10 +85,17 @@ export class RouletteComponent implements OnInit {
     }
   }
 
+  repeat() {
+    if (this.previousBet) {
+      this.selectedNumberControl = this.previousBet.number;
+      this.selectedMoneyControl = this.previousBet.money;
+    } else {
+      this.alertService.showAlert('No hay apuestas anteriores para repetir.');
+    }
+  }
+
   exit() {
     this.router.navigate(['/games-page']);
   }
-  repeat() {
-    throw new Error('Method not implemented.');
-  }
+
 }

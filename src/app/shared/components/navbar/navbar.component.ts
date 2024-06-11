@@ -2,7 +2,7 @@ import { Component, OnInit,Input } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { User } from '../../interfaces/user.interface';
 import { UserService } from '../../services/user.service';
-import { BalanceService } from '../../services/balance.service';
+
 
 @Component({
   selector: 'app-navbar',
@@ -13,12 +13,11 @@ export class NavbarComponent implements OnInit {
 
   @Input() toggleMethod: Function | undefined;
   user:User | null = null;
-  userBalance: number | null = null;
 
   constructor(
     private authService: AuthService,
     private userService:UserService,
-    public userBalanceService:BalanceService) { }
+    ) { }
 
   ngOnInit(): void {
     this.userService.getUserByEmail().subscribe(
@@ -30,12 +29,6 @@ export class NavbarComponent implements OnInit {
       }
     );
 
-    // Obtener el balance del usuario desde el servicio compartido
-    this.userBalanceService.getUserBalance().subscribe(
-      (balance: number | null) => {
-        this.userBalance = balance;
-      }
-    );
   }
 
   invokeToggle() {
@@ -49,10 +42,6 @@ export class NavbarComponent implements OnInit {
 
   logOutNav(){
     this.authService.logOut();
-  }
-
-  getUserBalanceParse(): string {
-    return this.userBalance ? this.userBalance.toFixed(2) : '0.00';
   }
 
 }
